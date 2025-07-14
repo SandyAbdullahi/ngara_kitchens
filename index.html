@@ -290,62 +290,70 @@
     </section>
 
     <!-- Lightbox modal for gallery -->
-    <div id="lightbox" class="fixed inset-0 bg-black/80 flex items-center justify-center z-50 hidden p-4">
+    <div id="lightbox" class="fade-scroll inset-0 bg-black/80 flex items-center justify-center z-50 hidden p-4">
         <button id="lightboxClose"
             class="absolute top-4 right-4 text-white text-3xl leading-none focus:outline-none">&times;</button>&times;</button>
         <img id="lightboxImg" class="max-h-[80vh] max-w-[90vw] object-contain rounded-lg shadow-lg" src=""
             alt="Lightbox image">
     </div>
 
-    <!-- Testimonials -->
-    <section class="py-20 bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-semibold text-center mb-12">Testimonials</h2>
-            <div class="max-w-3xl mx-auto space-y-12">
-                <blockquote class="fade-scroll relative bg-gray-100 p-8 rounded-xl shadow">
-                    <svg class="absolute -top-3 -left-3 h-8 w-8 text-primary" fill="currentColor" viewBox="0 0 24 24">
-                        <path
-                            d="M7.17 6A4.001 4.001 0 003 10v2a4 4 0 004 4h1a1 1 0 100-2H7a2 2 0 01-2-2v-2a2 2 0 012-2h.17A3 3 0 0010 13v-3a4 4 0 00-2.83-3.8zM17.17 6A4.001 4.001 0 0013 10v2a4 4 0 004 4h1a1 1 0 100-2h-1a2 2 0 01-2-2v-2a2 2 0 012-2h.17A3 3 0 0020 13v-3a4 4 0 00-2.83-3.8z" />
-                    </svg>
-                    <p class="text-gray-700 italic">“Ngara kitchens made our wedding reception unforgettable—the menu
-                        was
-                        beyond delicious and the service impeccable.”</p>
-                    <footer class="mt-4 text-sm font-semibold">— Aisha & Kim, Wedding</footer>
-                </blockquote>
-                <blockquote class="fade-scroll relative bg-gray-100 p-8 rounded-xl shadow">
-                    <svg class="absolute -top-3 -left-3 h-8 w-8 text-primary" fill="currentColor" viewBox="0 0 24 24">
-                        <path
-                            d="M7.17 6A4.001 4.001 0 003 10v2a4 4 0 004 4h1a1 1 0 100-2H7a2 2 0 01-2-2v-2a2 2 0 012-2h.17A3 3 0 0010 13v-3a4 4 0 00-2.83-3.8zM17.17 6A4.001 4.001 0 0013 10v2a4 4 0 004 4h1a1 1 0 100-2h-1a2 2 0 01-2-2v-2a2 2 0 012-2h.17A3 3 0 0020 13v-3a4 4 0 00-2.83-3.8z" />
-                    </svg>
-                    <p class="text-gray-700 italic">“Their corporate lunch setup impressed our clients and kept our team
-                        energized—highly recommend!”</p>
-                    <footer class="mt-4 text-sm font-semibold">— David, Tech Co. CEO</footer>
-                </blockquote>
-                <!-- New testimonial -->
-                <blockquote class="fade-scroll relative bg-gray-100 p-8 rounded-xl shadow">
-                    <svg class="absolute -top-3 -left-3 h-8 w-8 text-primary" fill="currentColor" viewBox="0 0 24 24">
-                        <path
-                            d="M7.17 6A4.001 4.001 0 003 10v2a4 4 0 004 4h1a1 1 0 100-2H7a2 2 0 01-2-2v-2a2 2 0 012-2h.17A3 3 0 0010 13v-3a4 4 0 00-2.83-3.8zM17.17 6A4.001 4.001 0 0013 10v2a4 4 0 004 4h1a1 1 0 100-2h-1a2 2 0 01-2-2v-2a2 2 0 012-2h.17A3 3 0 0020 13v-3a4 4 0 00-2.83-3.8z" />
-                    </svg>
-                    <p class="text-gray-700 italic">“Ngara Cooks exceeded our expectations for my mum’s 60th birthday.
-                        Every plate was a work of art!”</p>
-                    <footer class="mt-4 text-sm font-semibold">— Mary, Private Party</footer>
-                </blockquote>
+ 
+<!-- Testimonials -->
+<section class="py-20 bg-white">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-semibold text-center mb-12">Testimonials</h2>
 
-                <!-- New testimonial -->
-                <blockquote class="fade-scroll relative bg-gray-100 p-8 rounded-xl shadow">
-                    <svg class="absolute -top-3 -left-3 h-8 w-8 text-primary" fill="currentColor" viewBox="0 0 24 24">
-                        <path
-                            d="M7.17 6A4.001 4.001 0 003 10v2a4 4 0 004 4h1a1 1 0 100-2H7a2 2 0 01-2-2v-2a2 2 0 012-2h.17A3 3 0 0010 13v-3a4 4 0 00-2.83-3.8zM17.17 6A4.001 4.001 0 0013 10v2a4 4 0 004 4h1a1 1 0 100-2h-1a2 2 0 01-2-2v-2a2 2 0 012-2h.17A3 3 0 0020 13v-3a4 4 0 00-2.83-3.8z" />
-                    </svg>
-                    <p class="text-gray-700 italic">“We relied on Ngara Cooks for our NGO fundraiser: flawless vegan
-                        menu, charming staff, and zero stress.”</p>
-                    <footer class="mt-4 text-sm font-semibold">— Samuel, Event Co-ordinator</footer>
-                </blockquote>
+    <!-- Two-column grid on desktop, stacked on mobile -->
+    <div class="max-w-3xl mx-auto space-y-12 md:grid md:grid-cols-2 md:gap-8 md:space-y-0">
+      
+      <blockquote class="fade-scroll relative bg-gray-100 p-8 rounded-xl shadow">
+        <svg class="absolute -top-3 -left-3 h-8 w-8 text-primary" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M7.17 6A4.001 4.001 0 003 10v2a4 4 0 004 4h1a1 1 0 100-2H7a2 2 0 01-2-2v-2a2 2 0 012-2h.17A3 3 0 0010 13v-3a4 4 0 00-2.83-3.8zM17.17 6A4.001 4.001 0 0013 10v2a4 4 0 004 4h1a1 1 0 100-2h-1a2 2 0 01-2-2v-2a2 2 0 012-2h.17A3 3 0 0020 13v-3a4 4 0 00-2.83-3.8z"/>
+        </svg>
+        <p class="text-gray-700 italic">
+          “Ngara kitchens made our wedding reception unforgettable—the menu was
+          beyond delicious and the service impeccable.”
+        </p>
+        <footer class="mt-4 text-sm font-semibold">— Aisha & Kim, Wedding</footer>
+      </blockquote>
 
-            </div>
-        </div>
-    </section>
+      <blockquote class="fade-scroll relative bg-gray-100 p-8 rounded-xl shadow">
+        <svg class="absolute -top-3 -left-3 h-8 w-8 text-primary" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M7.17 6A4.001 4.001 0 003 10v2a4 4 0 004 4h1a1 1 0 100-2H7a2 2 0 01-2-2v-2a2 2 0 012-2h.17A3 3 0 0010 13v-3a4 4 0 00-2.83-3.8zM17.17 6A4.001 4.001 0 0013 10v2a4 4 0 004 4h1a1 1 0 100-2h-1a2 2 0 01-2-2v-2a2 2 0 012-2h.17A3 3 0 0020 13v-3a4 4 0 00-2.83-3.8z"/>
+        </svg>
+        <p class="text-gray-700 italic">
+          “Their corporate lunch setup impressed our clients and kept our team
+          energized—highly recommend!”
+        </p>
+        <footer class="mt-4 text-sm font-semibold">— David, Tech Co. CEO</footer>
+      </blockquote>
+
+      <blockquote class="fade-scroll relative bg-gray-100 p-8 rounded-xl shadow">
+        <svg class="absolute -top-3 -left-3 h-8 w-8 text-primary" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M7.17 6A4.001 4.001 0 003 10v2a4 4 0 004 4h1a1 1 0 100-2H7a2 2 0 01-2-2v-2a2 2 0 012-2h.17A3 3 0 0010 13v-3a4 4 0 00-2.83-3.8zM17.17 6A4.001 4.001 0 0013 10v2a4 4 0 004 4h1a1 1 0 100-2h-1a2 2 0 01-2-2v-2a2 2 0 012-2h.17A3 3 0 0020 13v-3a4 4 0 00-2.83-3.8z"/>
+        </svg>
+        <p class="text-gray-700 italic">
+          “Ngara Cooks exceeded our expectations for my mum’s 60th birthday.
+          Every plate was a work of art!”
+        </p>
+        <footer class="mt-4 text-sm font-semibold">— Mary, Private Party</footer>
+      </blockquote>
+
+      <blockquote class="fade-scroll relative bg-gray-100 p-8 rounded-xl shadow">
+        <svg class="absolute -top-3 -left-3 h-8 w-8 text-primary" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M7.17 6A4.001 4.001 0 003 10v2a4 4 0 004 4h1a1 1 0 100-2H7a2 2 0 01-2-2v-2a2 2 0 012-2h.17A3 3 0 0010 13v-3a4 4 0 00-2.83-3.8zM17.17 6A4.001 4.001 0 0013 10v2a4 4 0 004 4h1a1 1 0 100-2h-1a2 2 0 01-2-2v-2a2 2 0 012-2h.17A3 3 0 0020 13v-3a4 4 0 00-2.83-3.8z"/>
+        </svg>
+        <p class="text-gray-700 italic">
+          “We relied on Ngara Cooks for our NGO fundraiser: flawless vegan menu,
+          charming staff, and zero stress.”
+        </p>
+        <footer class="mt-4 text-sm font-semibold">— Samuel, Event Co-ordinator</footer>
+      </blockquote>
+
+    </div>
+  </div>
+</section>
+```
 
     <!-- CTA Banner -->
     <section class="relative bg-gradient-to-r from-primary-light to-primary text-white py-16 text-center">
@@ -397,7 +405,7 @@
                         placeholder="Tell us about your event"></textarea>
                 </div>
                 <button type="submit"
-                    class="fade-scroll bg-primary text-white py-3 rounded-full font-semibold hover:bg-primary-light transition">Send
+                    class="fade-scroll bg-primary text-white px-3 py-3 rounded-full font-semibold hover:bg-primary-light transition">Send
                     Request</button>
             </form>
         </div>
