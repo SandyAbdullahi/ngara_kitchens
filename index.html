@@ -98,12 +98,8 @@
                     class="rounded-[3rem] shadow-2xl w-4/5 md:w-[480px] lg:w-[540px] object-cover" />
             </div>
         </div>
-        <svg class="absolute bottom-0 left-0 w-full h-24 text-white" xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 1440 320">
-            <path fill="currentColor"
-                d="M0,192L48,165.3C96,139,192,85,288,85.3C384,85,480,139,576,176C672,213,768,235,864,224C960,213,1056,171,1152,149.3C1248,128,1344,128,1392,128L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
-            </path>
-        </svg>
+        <svg class="absolute bottom-0 left-0 w-full h-24 text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="currentColor" d="M0,192L48,165.3C96,139,192,85,288,85.3C384,85,480,139,576,176C672,213,768,235,864,224C960,213,1056,171,1152,149.3C1248,128,1344,128,1392,128L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+
     </section>
 
     <!-- Services -->
@@ -202,14 +198,14 @@
             <div class="grid gap-8 md:grid-cols-3">
                 <!-- Step -->
                 <div class="flex flex-col items-center text-center space-y-4">
-                    <img src="images/gallery-10.jpg" alt="Inquiry"
+                    <img src="images/inquiry.png" alt="Inquiry"
                         class="w-full h-56 object-cover rounded-xl shadow-md" />
                     <h3 class="text-xl font-semibold">Inquiry</h3>
                     <p class="text-gray-600">Tell us about your event, guest count, and vision.</p>
                 </div>
                 <!-- Step -->
                 <div class="flex flex-col items-center text-center space-y-4">
-                    <img src="images/gallery-11.jpg" alt="Menu" class="w-full h-56 object-cover rounded-xl shadow-md" />
+                    <img src="images/menu.png" alt="Menu" class="w-full h-56 object-cover rounded-xl shadow-md" />
                     <h3 class="text-xl font-semibold">Menu Customization</h3>
                     <p class="text-gray-600">Work with our chef to craft the perfect menu.</p>
                 </div>
@@ -224,40 +220,33 @@
         </div>
     </section>
 
-    <!-- Gallery -->
+        <!-- Gallery -->
     <section id="gallery" class="py-20 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-semibold text-center mb-12">Gallery</h2>
-            <div class="grid gap-4 md:grid-cols-3">
-                <img src="images/gallery-1.jpg" alt="Gallery image 1"
-                    class="rounded-xl shadow-md hover:shadow-lg transition object-cover h-64 w-full" />
-                <img src="images/gallery-2.jpg" alt="Gallery image 2"
-                    class="rounded-xl shadow-md hover:shadow-lg transition object-cover h-64 w-full" />
-                <img src="images/gallery-3.jpg" alt="Gallery image 3"
-                    class="rounded-xl shadow-md hover:shadow-lg transition object-cover h-64 w-full" />
-                <img src="images/gallery-4.jpg" alt="Gallery image 3"
-                    class="rounded-xl shadow-md hover:shadow-lg transition object-cover h-64 w-full" />
-                <img src="images/gallery-5.jpg" alt="Gallery image 3"
-                    class="rounded-xl shadow-md hover:shadow-lg transition object-cover h-64 w-full" />
-                <img src="images/gallery-6.jpg" alt="Gallery image 3"
-                    class="rounded-xl shadow-md hover:shadow-lg transition object-cover h-64 w-full" />
-                <img src="images/gallery-7.jpg" alt="Gallery image 3"
-                    class="rounded-xl shadow-md hover:shadow-lg transition object-cover h-64 w-full" />
-                <img src="images/gallery-8.jpg" alt="Gallery image 3"
-                    class="rounded-xl shadow-md hover:shadow-lg transition object-cover h-64 w-full" />
-                <img src="images/gallery-9.jpg" alt="Gallery image 3"
-                    class="rounded-xl shadow-md hover:shadow-lg transition object-cover h-64 w-full" />
-                <img src="images/gallery-10.jpg" alt="Gallery image 3"
-                    class="rounded-xl shadow-md hover:shadow-lg transition object-cover h-64 w-full" />
-                <img src="images/gallery-11.jpg" alt="Gallery image 3"
-                    class="rounded-xl shadow-md hover:shadow-lg transition object-cover h-64 w-full" />
-                <img src="images/gallery-12.jpg" alt="Gallery image 3"
-                    class="rounded-xl shadow-md hover:shadow-lg transition object-cover h-64 w-full" />
-
-
-            </div>
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-semibold text-center mb-12">Gallery</h2>
+        <div class="grid gap-4 md:grid-cols-3">
+          <!-- Each image has the class 'gallery-item' so JS can bind click events -->
+          <img src="images/gallery-1.jpg" alt="Gallery image 1" class="gallery-item rounded-xl shadow-md hover:shadow-lg transition object-cover h-64 w-full cursor-pointer" />
+          <img src="images/gallery-2.jpg" alt="Gallery image 2" class="gallery-item rounded-xl shadow-md hover:shadow-lg transition object-cover h-64 w-full cursor-pointer" />
+          <img src="images/gallery-3.jpg" alt="Gallery image 3" class="gallery-item rounded-xl shadow-md hover:shadow-lg transition object-cover h-64 w-full cursor-pointer" />
+          <img src="images/gallery-4.jpg" alt="Gallery image 4" class="gallery-item rounded-xl shadow-md hover:shadow-lg transition object-cover h-64 w-full cursor-pointer" />
+          <img src="images/gallery-5.jpg" alt="Gallery image 5" class="gallery-item rounded-xl shadow-md hover:shadow-lg transition object-cover h-64 w-full cursor-pointer" />
+          <img src="images/gallery-6.jpg" alt="Gallery image 6" class="gallery-item rounded-xl shadow-md hover:shadow-lg transition object-cover h-64 w-full cursor-pointer" />
+          <img src="images/gallery-7.jpg" alt="Gallery image 7" class="gallery-item rounded-xl shadow-md hover:shadow-lg transition object-cover h-64 w-full cursor-pointer" />
+          <img src="images/gallery-8.jpg" alt="Gallery image 8" class="gallery-item rounded-xl shadow-md hover:shadow-lg transition object-cover h-64 w-full cursor-pointer" />
+          <img src="images/gallery-9.jpg" alt="Gallery image 9" class="gallery-item rounded-xl shadow-md hover:shadow-lg transition object-cover h-64 w-full cursor-pointer" />
+          <img src="images/gallery-10.jpg" alt="Gallery image 10" class="gallery-item rounded-xl shadow-md hover:shadow-lg transition object-cover h-64 w-full cursor-pointer" />
+          <img src="images/gallery-11.jpg" alt="Gallery image 11" class="gallery-item rounded-xl shadow-md hover:shadow-lg transition object-cover h-64 w-full cursor-pointer" />
+          <img src="images/gallery-12.jpg" alt="Gallery image 12" class="gallery-item rounded-xl shadow-md hover:shadow-lg transition object-cover h-64 w-full cursor-pointer" />
         </div>
+      </div>
     </section>
+
+    <!-- Lightbox modal for gallery -->
+    <div id="lightbox" class="fixed inset-0 bg-black/80 flex items-center justify-center z-50 hidden p-4">
+      <button id="lightboxClose" class="absolute top-4 right-4 text-white text-3xl leading-none focus:outline-none">&times;</button>&times;</button>
+      <img id="lightboxImg" class="max-h-[80vh] max-w-[90vw] object-contain rounded-lg shadow-lg" src="" alt="Lightbox image">
+    </div>
 
     <!-- Testimonials -->
     <section class="py-20 bg-white">
@@ -378,13 +367,34 @@
 
     <!-- Simple mobile menu script -->
     <script>
-        const menuBtn = document.getElementById('menuBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
+      // Gallery lightbox
+      const galleryItems = document.querySelectorAll('.gallery-item');
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightboxImg');
+      const lightboxClose = document.getElementById('lightboxClose');
 
-        function toggleMenu() {
-            mobileMenu.classList.toggle('hidden');
-        }
-        menuBtn.addEventListener('click', toggleMenu);
+      function openLightbox(src) {
+        lightboxImg.src = src;
+        lightbox.classList.remove('hidden');
+        document.body.classList.add('overflow-hidden');
+      }
+      function closeLightbox() {
+        lightbox.classList.add('hidden');
+        document.body.classList.remove('overflow-hidden');
+      }
+
+      galleryItems.forEach((img) => {
+        img.addEventListener('click', () => openLightbox(img.src));
+      });
+      lightboxClose.addEventListener('click', closeLightbox);
+      lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) closeLightbox();
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeLightbox();
+      });
+
+    
     </script>
 </body>
 
