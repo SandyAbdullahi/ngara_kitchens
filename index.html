@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fresh Fork Catering</title>
@@ -8,300 +9,378 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Heroicons CDN (outline) -->
     <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              primary: {
-                light: '#3ED07A',
-                DEFAULT: '#11B1B4',
-              },
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            light: '#3ED07A',
+                            DEFAULT: '#11B1B4',
+                        },
+                    },
+                },
             },
-          },
-        },
-      };
+        };
     </script>
     <link rel="preconnect" href="https://fonts.bunny.net" />
     <link href="https://fonts.bunny.net/css?family=poppins:400,600|inter:400,500" rel="stylesheet" />
     <style>
-      body {
-        font-family: 'Inter', sans-serif;
-      }
-      h1, h2, h3, h4 {
-        font-family: 'Poppins', sans-serif;
-      }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Poppins', sans-serif;
+        }
     </style>
-  </head>
-  <body class="bg-white text-gray-800 antialiased">
+</head>
+
+<body class="bg-white text-gray-800 antialiased">
     <!-- Navigation -->
     <header class="fixed inset-x-0 top-0 z-30 bg-white/70 backdrop-blur-md shadow-sm">
-      <div class="container mx-auto flex items-center justify-between px-4 py-3">
-        <a href="#" class="flex items-center space-x-2 text-primary font-semibold text-lg">
-          <!-- Logo icon -->
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7h18M3 12h18M5 17h14" />
-          </svg>
-          <span>Fresh Fork</span>
-        </a>
-        <nav class="hidden md:flex space-x-8 text-sm font-medium">
-          <a href="#services" class="hover:text-primary">Services</a>
-          <a href="#menus" class="hover:text-primary">Menus</a>
-          <a href="#how" class="hover:text-primary">How&nbsp;It&nbsp;Works</a>
-          <a href="#gallery" class="hover:text-primary">Gallery</a>
-          <a href="#contact" class="hover:text-primary">Contact</a>
-        </nav>
-        <a href="#quote" class="hidden md:inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-primary-light transition">Get a quote</a>
-        <!-- Mobile menu button -->
-        <button id="menuBtn" class="md:hidden">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
-      </div>
-      <!-- Mobile menu dropdown -->
-      <div id="mobileMenu" class="hidden flex-col space-y-4 px-4 pb-6 md:hidden">
-        <a href="#services" class="block" onclick="toggleMenu()">Services</a>
-        <a href="#menus" class="block" onclick="toggleMenu()">Menus</a>
-        <a href="#how" class="block" onclick="toggleMenu()">How It Works</a>
-        <a href="#gallery" class="block" onclick="toggleMenu()">Gallery</a>
-        <a href="#contact" class="block" onclick="toggleMenu()">Contact</a>
-        <a href="#quote" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-semibold" onclick="toggleMenu()">Get a quote</a>
-      </div>
+        <div class="container mx-auto flex items-center justify-between px-4 py-3">
+            <a href="#" class="flex items-center space-x-2 text-primary font-semibold text-lg">
+                <!-- Logo icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7h18M3 12h18M5 17h14" />
+                </svg>
+                <span>Ngara Kitchens</span>
+            </a>
+            <nav class="hidden md:flex space-x-8 text-sm font-medium">
+                <a href="#services" class="hover:text-primary">Services</a>
+                <a href="#menus" class="hover:text-primary">Menus</a>
+                <a href="#how" class="hover:text-primary">How&nbsp;It&nbsp;Works</a>
+                <a href="#gallery" class="hover:text-primary">Gallery</a>
+                <a href="#contact" class="hover:text-primary">Contact</a>
+            </nav>
+            <a href="#quote"
+                class="hidden md:inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-primary-light transition">Get
+                a quote</a>
+            <!-- Mobile menu button -->
+            <button id="menuBtn" class="md:hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+        <!-- Mobile menu dropdown -->
+        <div id="mobileMenu" class="hidden flex-col space-y-4 px-4 pb-6 md:hidden">
+            <a href="#services" class="block" onclick="toggleMenu()">Services</a>
+            <a href="#menus" class="block" onclick="toggleMenu()">Menus</a>
+            <a href="#how" class="block" onclick="toggleMenu()">How It Works</a>
+            <a href="#gallery" class="block" onclick="toggleMenu()">Gallery</a>
+            <a href="#contact" class="block" onclick="toggleMenu()">Contact</a>
+            <a href="#quote" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-semibold"
+                onclick="toggleMenu()">Get a quote</a>
+        </div>
     </header>
 
     <!-- Hero -->
     <section class="relative pt-32 pb-20 bg-gradient-to-br from-primary-light to-primary text-white overflow-hidden">
-      <div class="container mx-auto flex flex-col-reverse md:flex-row items-center px-4">
-        <div class="w-full md:w-1/2 text-center md:text-left space-y-6">
-          <h1 class="text-4xl md:text-5xl font-semibold leading-tight">Fresh, Modern Catering for Every Occasion</h1>
-          <p class="text-lg">Elevating events across Nairobi since 2018.</p>
-          <a href="#quote" class="inline-block bg-white text-primary px-6 py-3 rounded-full font-semibold shadow hover:bg-gray-50 transition">Get a quote</a>
+        <div class="container mx-auto flex flex-col-reverse md:flex-row items-center px-4">
+            <div class="w-full md:w-1/2 text-center md:text-left space-y-6">
+                <h1 class="text-4xl md:text-5xl font-semibold leading-tight">Fresh, Modern Catering for Every Occasion
+                </h1>
+                <p class="text-lg">Elevating events across Nairobi since 2018.</p>
+                <a href="#quote"
+                    class="inline-block bg-white text-primary px-6 py-3 rounded-full font-semibold shadow hover:bg-gray-50 transition">Get
+                    a quote</a>
+            </div>
+            <div class="w-full md:w-1/2 flex justify-center mb-10 md:mb-0">
+                <img src="images/hero.jpg" alt="Catering buffet" class="rounded-3xl shadow-lg w-4/5 md:w-full" />
+            </div>
         </div>
-        <div class="w-full md:w-1/2 flex justify-center mb-10 md:mb-0">
-          <img src="images/hero.jpg" alt="Catering buffet" class="rounded-3xl shadow-lg w-4/5 md:w-full" />
-        </div>
-      </div>
-      <!-- Curve divider -->
-      <svg class="absolute bottom-0 left-0 w-full h-24 text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-        <path fill="currentColor" d="M0,192L48,165.3C96,139,192,85,288,85.3C384,85,480,139,576,176C672,213,768,235,864,224C960,213,1056,171,1152,149.3C1248,128,1344,128,1392,128L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
-      </svg>
+        <!-- Curve divider -->
+        <svg class="absolute bottom-0 left-0 w-full h-24 text-white" xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 1440 320">
+            <path fill="currentColor"
+                d="M0,192L48,165.3C96,139,192,85,288,85.3C384,85,480,139,576,176C672,213,768,235,864,224C960,213,1056,171,1152,149.3C1248,128,1344,128,1392,128L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
+            </path>
+        </svg>
     </section>
 
     <!-- Services -->
     <section id="services" class="py-20 bg-white">
-      <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-semibold text-center mb-12">Services at a Glance</h2>
-        <div class="grid gap-8 md:grid-cols-3">
-          <!-- Card -->
-          <div class="bg-white rounded-xl shadow-md p-8 text-center hover:shadow-lg transition">
-            <div class="flex justify-center mb-4 text-primary">
-              <!-- Briefcase icon -->
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m5 4h5a2 2 0 012 2v7a2 2 0 01-2 2H4a2 2 0 01-2-2v-7a2 2 0 012-2h5m3 0v13" />
-              </svg>
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-semibold text-center mb-12">Services at a Glance</h2>
+            <div class="grid gap-8 md:grid-cols-3">
+                <!-- Card -->
+                <div class="bg-white rounded-xl shadow-md p-8 text-center hover:shadow-lg transition">
+                    <div class="flex justify-center mb-4 text-primary">
+                        <!-- Briefcase icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m5 4h5a2 2 0 012 2v7a2 2 0 01-2 2H4a2 2 0 01-2-2v-7a2 2 0 012-2h5m3 0v13" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Corporate Lunches</h3>
+                    <p class="text-gray-600">Seasonal bruschetta, stuffed chicken breast, herb‑crusted salmon.</p>
+                </div>
+                <!-- Card -->
+                <div class="bg-white rounded-xl shadow-md p-8 text-center hover:shadow-lg transition">
+                    <div class="flex justify-center mb-4 text-primary">
+                        <!-- Heart icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6a9 9 0 0116 0c0 5-8 13-8 13S4 11 4 6z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Weddings & Parties</h3>
+                    <p class="text-gray-600">Artisan cheese board, beef tenderloin, lobster risotto.</p>
+                </div>
+                <!-- Card -->
+                <div class="bg-white rounded-xl shadow-md p-8 text-center hover:shadow-lg transition">
+                    <div class="flex justify-center mb-4 text-primary">
+                        <!-- Chef hat icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 3c-3.5 0-6.05 2-6 5 0 2.08 1.34 3.84 3.22 4.42a4 4 0 007.56 0C16.66 11.84 18 10.08 18 8c.05-3-2.5-5-6-5zM6 17v1a3 3 0 003 3h6a3 3 0 003-3v-1" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Private Chef Experiences</h3>
+                    <p class="text-gray-600">Seared scallops, rack of lamb, truffle mushroom risotto.</p>
+                </div>
             </div>
-            <h3 class="text-xl font-semibold mb-2">Corporate Lunches</h3>
-            <p class="text-gray-600">Seasonal bruschetta, stuffed chicken breast, herb‑crusted salmon.</p>
-          </div>
-          <!-- Card -->
-          <div class="bg-white rounded-xl shadow-md p-8 text-center hover:shadow-lg transition">
-            <div class="flex justify-center mb-4 text-primary">
-              <!-- Heart icon -->
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a9 9 0 0116 0c0 5-8 13-8 13S4 11 4 6z" />
-              </svg>
-            </div>
-            <h3 class="text-xl font-semibold mb-2">Weddings & Parties</h3>
-            <p class="text-gray-600">Artisan cheese board, beef tenderloin, lobster risotto.</p>
-          </div>
-          <!-- Card -->
-          <div class="bg-white rounded-xl shadow-md p-8 text-center hover:shadow-lg transition">
-            <div class="flex justify-center mb-4 text-primary">
-              <!-- Chef hat icon -->
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3c-3.5 0-6.05 2-6 5 0 2.08 1.34 3.84 3.22 4.42a4 4 0 007.56 0C16.66 11.84 18 10.08 18 8c.05-3-2.5-5-6-5zM6 17v1a3 3 0 003 3h6a3 3 0 003-3v-1" />
-              </svg>
-            </div>
-            <h3 class="text-xl font-semibold mb-2">Private Chef Experiences</h3>
-            <p class="text-gray-600">Seared scallops, rack of lamb, truffle mushroom risotto.</p>
-          </div>
         </div>
-      </div>
     </section>
 
- <!-- Signature Menus -->
+    <!-- Signature Menus -->
     <section id="menus" class="py-20 bg-gray-50">
-      <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-semibold text-center mb-12">Signature Menus</h2>
-        <div class="grid gap-8 md:grid-cols-3">
-          <!-- Menu card -->
-          <div class="bg-white rounded-xl shadow-md p-8 hover:shadow-lg transition">
-            <h3 class="text-xl font-semibold mb-2">Classic</h3>
-            <p class="text-primary font-semibold mb-4">KSh 3,000&nbsp;<span class="text-sm font-normal text-gray-600">per person</span></p>
-            <ul class="space-y-1 text-gray-600 list-disc list-inside">
-              <li>Seasonal bruschetta</li>
-              <li>Stuffed chicken breast</li>
-              <li>Herb‑crusted salmon</li>
-            </ul>
-          </div>
-          <!-- Menu card -->
-          <div class="bg-white rounded-xl shadow-md p-8 hover:shadow-lg transition">
-            <h3 class="text-xl font-semibold mb-2">Premium</h3>
-            <p class="text-primary font-semibold mb-4">KSh 4,500&nbsp;<span class="text-sm font-normal text-gray-600">per person</span></p>
-            <ul class="space-y-1 text-gray-600 list-disc list-inside">
-              <li>Artisan cheese board</li>
-              <li>Beef tenderloin</li>
-              <li>Lobster risotto</li>
-            </ul>
-          </div>
-          <!-- Menu card -->
-          <div class="bg-white rounded-xl shadow-md p-8 hover:shadow-lg transition">
-            <h3 class="text-xl font-semibold mb-2">Chef’s Table</h3>
-            <p class="text-primary font-semibold mb-4">KSh 7,500&nbsp;<span class="text-sm font-normal text-gray-600">per person</span></p>
-            <ul class="space-y-1 text-gray-600 list-disc list-inside">
-              <li>Seared scallops</li>
-              <li>Rack of lamb</li>
-              <li>Truffle mushroom risotto</li>
-            </ul>
-          </div>
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-semibold text-center mb-12">Signature Menus</h2>
+            <div class="grid gap-8 md:grid-cols-3">
+                <!-- Menu card -->
+                <div class="bg-white rounded-xl shadow-md p-8 hover:shadow-lg transition">
+                    <h3 class="text-xl font-semibold mb-2">Classic</h3>
+                    <p class="text-primary font-semibold mb-4">KSh 3,000&nbsp;<span
+                            class="text-sm font-normal text-gray-600">per person</span></p>
+                    <ul class="space-y-1 text-gray-600 list-disc list-inside">
+                        <li>Seasonal bruschetta</li>
+                        <li>Stuffed chicken breast</li>
+                        <li>Herb‑crusted salmon</li>
+                    </ul>
+                </div>
+                <!-- Menu card -->
+                <div class="bg-white rounded-xl shadow-md p-8 hover:shadow-lg transition">
+                    <h3 class="text-xl font-semibold mb-2">Premium</h3>
+                    <p class="text-primary font-semibold mb-4">KSh 4,500&nbsp;<span
+                            class="text-sm font-normal text-gray-600">per person</span></p>
+                    <ul class="space-y-1 text-gray-600 list-disc list-inside">
+                        <li>Artisan cheese board</li>
+                        <li>Beef tenderloin</li>
+                        <li>Lobster risotto</li>
+                    </ul>
+                </div>
+                <!-- Menu card -->
+                <div class="bg-white rounded-xl shadow-md p-8 hover:shadow-lg transition">
+                    <h3 class="text-xl font-semibold mb-2">Chef’s Table</h3>
+                    <p class="text-primary font-semibold mb-4">KSh 7,500&nbsp;<span
+                            class="text-sm font-normal text-gray-600">per person</span></p>
+                    <ul class="space-y-1 text-gray-600 list-disc list-inside">
+                        <li>Seared scallops</li>
+                        <li>Rack of lamb</li>
+                        <li>Truffle mushroom risotto</li>
+                    </ul>
+                </div>
+            </div>
         </div>
-      </div>
     </section>
 
     <!-- How It Works -->
     <section id="how" class="py-20 bg-white">
-      <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-semibold text-center mb-12">How It Works</h2>
-        <div class="grid gap-8 md:grid-cols-3">
-          <!-- Step -->
-          <div class="flex flex-col items-center text-center space-y-4">
-            <img src="images/step1.jpg" alt="Inquiry" class="w-full h-56 object-cover rounded-xl shadow-md" />
-            <h3 class="text-xl font-semibold">Inquiry</h3>
-            <p class="text-gray-600">Tell us about your event, guest count, and vision.</p>
-          </div>
-          <!-- Step -->
-          <div class="flex flex-col items-center text-center space-y-4">
-            <img src="images/step2.jpg" alt="Menu" class="w-full h-56 object-cover rounded-xl shadow-md" />
-            <h3 class="text-xl font-semibold">Menu Customization</h3>
-            <p class="text-gray-600">Work with our chef to craft the perfect menu.</p>
-          </div>
-          <!-- Step -->
-          <div class="flex flex-col items-center text-center space-y-4">
-            <img src="images/step3.jpg" alt="Event" class="w-full h-56 object-cover rounded-xl shadow-md" />
-            <h3 class="text-xl font-semibold">Event Day</h3>
-            <p class="text-gray-600">Relax while we handle cooking, setup, and service.</p>
-          </div>
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-semibold text-center mb-12">How It Works</h2>
+            <div class="grid gap-8 md:grid-cols-3">
+                <!-- Step -->
+                <div class="flex flex-col items-center text-center space-y-4">
+                    <img src="images/gallery-10.jpg" alt="Inquiry"
+                        class="w-full h-56 object-cover rounded-xl shadow-md" />
+                    <h3 class="text-xl font-semibold">Inquiry</h3>
+                    <p class="text-gray-600">Tell us about your event, guest count, and vision.</p>
+                </div>
+                <!-- Step -->
+                <div class="flex flex-col items-center text-center space-y-4">
+                    <img src="images/gallery-11.jpg" alt="Menu" class="w-full h-56 object-cover rounded-xl shadow-md" />
+                    <h3 class="text-xl font-semibold">Menu Customization</h3>
+                    <p class="text-gray-600">Work with our chef to craft the perfect menu.</p>
+                </div>
+                <!-- Step -->
+                <div class="flex flex-col items-center text-center space-y-4">
+                    <img src="images/gallery-12.jpg" alt="Event"
+                        class="w-full h-56 object-cover rounded-xl shadow-md" />
+                    <h3 class="text-xl font-semibold">Event Day</h3>
+                    <p class="text-gray-600">Relax while we handle cooking, setup, and service.</p>
+                </div>
+            </div>
         </div>
-      </div>
     </section>
 
     <!-- Gallery -->
     <section id="gallery" class="py-20 bg-gray-50">
-      <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-semibold text-center mb-12">Gallery</h2>
-        <div class="grid gap-4 md:grid-cols-3">
-          <img src="images/gallery1.jpg" alt="Gallery image 1" class="rounded-xl shadow-md hover:shadow-lg transition object-cover h-64 w-full" />
-          <img src="images/gallery2.jpg" alt="Gallery image 2" class="rounded-xl shadow-md hover:shadow-lg transition object-cover h-64 w-full" />
-          <img src="images/gallery3.jpg" alt="Gallery image 3" class="rounded-xl shadow-md hover:shadow-lg transition object-cover h-64 w-full" />
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-semibold text-center mb-12">Gallery</h2>
+            <div class="grid gap-4 md:grid-cols-3">
+                <img src="images/gallery-1.jpg" alt="Gallery image 1"
+                    class="rounded-xl shadow-md hover:shadow-lg transition object-cover h-64 w-full" />
+                <img src="images/gallery-2.jpg" alt="Gallery image 2"
+                    class="rounded-xl shadow-md hover:shadow-lg transition object-cover h-64 w-full" />
+                <img src="images/gallery-3.jpg" alt="Gallery image 3"
+                    class="rounded-xl shadow-md hover:shadow-lg transition object-cover h-64 w-full" />
+                <img src="images/gallery-4.jpg" alt="Gallery image 3"
+                    class="rounded-xl shadow-md hover:shadow-lg transition object-cover h-64 w-full" />
+                <img src="images/gallery-5.jpg" alt="Gallery image 3"
+                    class="rounded-xl shadow-md hover:shadow-lg transition object-cover h-64 w-full" />
+                <img src="images/gallery-6.jpg" alt="Gallery image 3"
+                    class="rounded-xl shadow-md hover:shadow-lg transition object-cover h-64 w-full" />
+                <img src="images/gallery-7.jpg" alt="Gallery image 3"
+                    class="rounded-xl shadow-md hover:shadow-lg transition object-cover h-64 w-full" />
+                <img src="images/gallery-8.jpg" alt="Gallery image 3"
+                    class="rounded-xl shadow-md hover:shadow-lg transition object-cover h-64 w-full" />
+                <img src="images/gallery-9.jpg" alt="Gallery image 3"
+                    class="rounded-xl shadow-md hover:shadow-lg transition object-cover h-64 w-full" />
+                <img src="images/gallery-10.jpg" alt="Gallery image 3"
+                    class="rounded-xl shadow-md hover:shadow-lg transition object-cover h-64 w-full" />
+
+
+            </div>
         </div>
-      </div>
     </section>
 
     <!-- Testimonials -->
     <section class="py-20 bg-white">
-      <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-semibold text-center mb-12">Testimonials</h2>
-        <div class="max-w-3xl mx-auto space-y-12">
-          <blockquote class="relative bg-gray-100 p-8 rounded-xl shadow">
-            <svg class="absolute -top-3 -left-3 h-8 w-8 text-primary" fill="currentColor" viewBox="0 0 24 24"><path d="M7.17 6A4.001 4.001 0 003 10v2a4 4 0 004 4h1a1 1 0 100-2H7a2 2 0 01-2-2v-2a2 2 0 012-2h.17A3 3 0 0010 13v-3a4 4 0 00-2.83-3.8zM17.17 6A4.001 4.001 0 0013 10v2a4 4 0 004 4h1a1 1 0 100-2h-1a2 2 0 01-2-2v-2a2 2 0 012-2h.17A3 3 0 0020 13v-3a4 4 0 00-2.83-3.8z"/></svg>
-            <p class="text-gray-700 italic">“Fresh Fork made our wedding reception unforgettable—the menu was beyond delicious and the service impeccable.”</p>
-            <footer class="mt-4 text-sm font-semibold">— Aisha & Ken, Wedding</footer>
-          </blockquote>
-          <blockquote class="relative bg-gray-100 p-8 rounded-xl shadow">
-            <svg class="absolute -top-3 -left-3 h-8 w-8 text-primary" fill="currentColor" viewBox="0 0 24 24"><path d="M7.17 6A4.001 4.001 0 003 10v2a4 4 0 004 4h1a1 1 0 100-2H7a2 2 0 01-2-2v-2a2 2 0 012-2h.17A3 3 0 0010 13v-3a4 4 0 00-2.83-3.8zM17.17 6A4.001 4.001 0 0013 10v2a4 4 0 004 4h1a1 1 0 100-2h-1a2 2 0 01-2-2v-2a2 2 0 012-2h.17A3 3 0 0020 13v-3a4 4 0 00-2.83-3.8z"/></svg>
-            <p class="text-gray-700 italic">“Their corporate lunch setup impressed our clients and kept our team energized—highly recommend!”</p>
-            <footer class="mt-4 text-sm font-semibold">— David, Tech Co. CEO</footer>
-          </blockquote>
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-semibold text-center mb-12">Testimonials</h2>
+            <div class="max-w-3xl mx-auto space-y-12">
+                <blockquote class="relative bg-gray-100 p-8 rounded-xl shadow">
+                    <svg class="absolute -top-3 -left-3 h-8 w-8 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M7.17 6A4.001 4.001 0 003 10v2a4 4 0 004 4h1a1 1 0 100-2H7a2 2 0 01-2-2v-2a2 2 0 012-2h.17A3 3 0 0010 13v-3a4 4 0 00-2.83-3.8zM17.17 6A4.001 4.001 0 0013 10v2a4 4 0 004 4h1a1 1 0 100-2h-1a2 2 0 01-2-2v-2a2 2 0 012-2h.17A3 3 0 0020 13v-3a4 4 0 00-2.83-3.8z" />
+                    </svg>
+                    <p class="text-gray-700 italic">“Fresh Fork made our wedding reception unforgettable—the menu was
+                        beyond delicious and the service impeccable.”</p>
+                    <footer class="mt-4 text-sm font-semibold">— Aisha & Ken, Wedding</footer>
+                </blockquote>
+                <blockquote class="relative bg-gray-100 p-8 rounded-xl shadow">
+                    <svg class="absolute -top-3 -left-3 h-8 w-8 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M7.17 6A4.001 4.001 0 003 10v2a4 4 0 004 4h1a1 1 0 100-2H7a2 2 0 01-2-2v-2a2 2 0 012-2h.17A3 3 0 0010 13v-3a4 4 0 00-2.83-3.8zM17.17 6A4.001 4.001 0 0013 10v2a4 4 0 004 4h1a1 1 0 100-2h-1a2 2 0 01-2-2v-2a2 2 0 012-2h.17A3 3 0 0020 13v-3a4 4 0 00-2.83-3.8z" />
+                    </svg>
+                    <p class="text-gray-700 italic">“Their corporate lunch setup impressed our clients and kept our team
+                        energized—highly recommend!”</p>
+                    <footer class="mt-4 text-sm font-semibold">— David, Tech Co. CEO</footer>
+                </blockquote>
+            </div>
         </div>
-      </div>
     </section>
 
     <!-- CTA Banner -->
     <section class="relative bg-gradient-to-r from-primary-light to-primary text-white py-16 text-center">
-      <h2 class="text-3xl md:text-4xl font-semibold mb-6">Let’s make your event delicious</h2>
-      <a href="#quote" class="inline-block bg-white text-primary px-8 py-4 rounded-full font-semibold shadow hover:bg-gray-50 transition">Request a Quote</a>
+        <h2 class="text-3xl md:text-4xl font-semibold mb-6">Let’s make your event delicious</h2>
+        <a href="#quote"
+            class="inline-block bg-white text-primary px-8 py-4 rounded-full font-semibold shadow hover:bg-gray-50 transition">Request
+            a Quote</a>
     </section>
 
     <!-- Quote / Contact Section -->
     <section id="quote" class="py-20 bg-gray-50">
-      <div class="container mx-auto px-4 max-w-2xl">
-        <h2 class="text-3xl font-semibold text-center mb-8">Request a Quote</h2>
-        <form action="#" method="POST" class="space-y-6 bg-white p-8 rounded-xl shadow">
-          <div class="grid md:grid-cols-2 gap-6">
-            <div>
-              <label class="block mb-2 font-medium">Name</label>
-              <input type="text" class="w-full border-gray-300 rounded-md focus:ring-primary focus:border-primary" placeholder="Your name" required />
-            </div>
-            <div>
-              <label class="block mb-2 font-medium">Email</label>
-              <input type="email" class="w-full border-gray-300 rounded-md focus:ring-primary focus:border-primary" placeholder="you@example.com" required />
-            </div>
-            <div>
-              <label class="block mb-2 font-medium">Phone</label>
-              <input type="tel" class="w-full border-gray-300 rounded-md focus:ring-primary focus:border-primary" placeholder="0712 345 678" />
-            </div>
-            <div>
-              <label class="block mb-2 font-medium">Event Date</label>
-              <input type="date" class="w-full border-gray-300 rounded-md focus:ring-primary focus:border-primary" />
-            </div>
-          </div>
-          <div>
-            <label class="block mb-2 font-medium">Guest Count</label>
-            <input type="number" class="w-full border-gray-300 rounded-md focus:ring-primary focus:border-primary" placeholder="e.g. 120" />
-          </div>
-          <div>
-            <label class="block mb-2 font-medium">Message / Requirements</label>
-            <textarea rows="4" class="w-full border-gray-300 rounded-md focus:ring-primary focus:border-primary" placeholder="Tell us about your event"></textarea>
-          </div>
-          <button type="submit" class="w-full bg-primary text-white py-3 rounded-full font-semibold hover:bg-primary-light transition">Send Request</button>
-        </form>
-      </div>
+        <div class="container mx-auto px-4 max-w-2xl">
+            <h2 class="text-3xl font-semibold text-center mb-8">Request a Quote</h2>
+            <form action="#" method="POST" class="space-y-6 bg-white p-8 rounded-xl shadow">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block mb-2 font-medium">Name</label>
+                        <input type="text"
+                            class="w-full border-gray-300 rounded-md focus:ring-primary focus:border-primary"
+                            placeholder="Your name" required />
+                    </div>
+                    <div>
+                        <label class="block mb-2 font-medium">Email</label>
+                        <input type="email"
+                            class="w-full border-gray-300 rounded-md focus:ring-primary focus:border-primary"
+                            placeholder="you@example.com" required />
+                    </div>
+                    <div>
+                        <label class="block mb-2 font-medium">Phone</label>
+                        <input type="tel"
+                            class="w-full border-gray-300 rounded-md focus:ring-primary focus:border-primary"
+                            placeholder="0712 345 678" />
+                    </div>
+                    <div>
+                        <label class="block mb-2 font-medium">Event Date</label>
+                        <input type="date"
+                            class="w-full border-gray-300 rounded-md focus:ring-primary focus:border-primary" />
+                    </div>
+                </div>
+                <div>
+                    <label class="block mb-2 font-medium">Guest Count</label>
+                    <input type="number"
+                        class="w-full border-gray-300 rounded-md focus:ring-primary focus:border-primary"
+                        placeholder="e.g. 120" />
+                </div>
+                <div>
+                    <label class="block mb-2 font-medium">Message / Requirements</label>
+                    <textarea rows="4" class="w-full border-gray-300 rounded-md focus:ring-primary focus:border-primary"
+                        placeholder="Tell us about your event"></textarea>
+                </div>
+                <button type="submit"
+                    class="w-full bg-primary text-white py-3 rounded-full font-semibold hover:bg-primary-light transition">Send
+                    Request</button>
+            </form>
+        </div>
     </section>
 
     <!-- Footer -->
     <footer id="contact" class="bg-white py-10 border-t">
-      <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between space-y-6 md:space-y-0">
-        <div>
-          <h3 class="text-xl font-semibold mb-2">Fresh Fork Catering</h3>
-          <p class="text-gray-600">Nairobi, Kenya</p>
-          <p class="text-gray-600">(+254) 712 345 678</p>
-          <p class="text-gray-600">hello@freshfork.co.ke</p>
+        <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between space-y-6 md:space-y-0">
+            <div>
+                <h3 class="text-xl font-semibold mb-2">Ngara Cooks Catering</h3>
+                <p class="text-gray-600">Ngara, Nairobi, Kenya</p>
+                <p class="text-gray-600">(+254) 712 345 678</p>
+                <p class="text-gray-600">hello@ngaracooks.co.ke</p>
+            </div>
+            <div>
+                <h4 class="font-semibold mb-2">Quick Links</h4>
+                <ul class="space-y-1 text-sm text-gray-600">
+                    <li><a href="#services" class="hover:text-primary">Services</a></li>
+                    <li><a href="#menus" class="hover:text-primary">Menus</a></li>
+                    <li><a href="#gallery" class="hover:text-primary">Gallery</a></li>
+                    <li><a href="#quote" class="hover:text-primary">Quote</a></li>
+                </ul>
+            </div>
+            <div class="flex space-x-4">
+                <a href="#" class="text-gray-500 hover:text-primary"><svg xmlns="http://www.w3.org/2000/svg"
+                        class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M12 2.04c-5.52 0-10 4.48-10 10 0 4.41 2.85 8.15 6.85 9.49.5.09.68-.22.68-.49 0-.24-.01-.87-.01-1.71-2.79.61-3.37-1.34-3.37-1.34-.45-1.15-1.1-1.46-1.1-1.46-.9-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.9.83.09-.65.35-1.08.63-1.32-2.22-.25-4.56-1.11-4.56-4.95 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.28.1-2.67 0 0 .84-.27 2.75 1.02a9.58 9.58 0 012.5-.34c.85 0 1.7.11 2.5.34 1.9-1.29 2.74-1.02 2.74-1.02.57 1.39.22 2.42.11 2.67.64.7 1.03 1.59 1.03 2.68 0 3.85-2.34 4.69-4.57 4.94.36.31.68.92.68 1.85 0 1.33-.01 2.4-.01 2.73 0 .27.18.59.69.49A10.01 10.01 0 0022 12c0-5.52-4.48-9.96-10-9.96z" />
+                    </svg></a>
+                <a href="#" class="text-gray-500 hover:text-primary"><svg xmlns="http://www.w3.org/2000/svg"
+                        class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M22.23 5.924c-.793.35-1.644.586-2.538.69a4.49 4.49 0 001.982-2.48 8.847 8.847 0 01-2.826 1.082 4.487 4.487 0 00-7.673 4.092 12.744 12.744 0 01-9.261-4.697 4.48 4.48 0 001.39 5.983A4.401 4.401 0 01.88 10.96v.056a4.486 4.486 0 003.596 4.398 4.5 4.5 0 01-2.022.077 4.487 4.487 0 004.191 3.114A8.998 8.998 0 010 19.54a12.697 12.697 0 006.88 2.018c8.256 0 12.784-6.84 12.784-12.784 0-.195-.004-.39-.013-.583a9.128 9.128 0 002.242-2.322z" />
+                    </svg></a>
+            </div>
         </div>
-        <div>
-          <h4 class="font-semibold mb-2">Quick Links</h4>
-          <ul class="space-y-1 text-sm text-gray-600">
-            <li><a href="#services" class="hover:text-primary">Services</a></li>
-            <li><a href="#menus" class="hover:text-primary">Menus</a></li>
-            <li><a href="#gallery" class="hover:text-primary">Gallery</a></li>
-            <li><a href="#quote" class="hover:text-primary">Quote</a></li>
-          </ul>
-        </div>
-        <div class="flex space-x-4">
-          <a href="#" class="text-gray-500 hover:text-primary"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.04c-5.52 0-10 4.48-10 10 0 4.41 2.85 8.15 6.85 9.49.5.09.68-.22.68-.49 0-.24-.01-.87-.01-1.71-2.79.61-3.37-1.34-3.37-1.34-.45-1.15-1.1-1.46-1.1-1.46-.9-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.9.83.09-.65.35-1.08.63-1.32-2.22-.25-4.56-1.11-4.56-4.95 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.28.1-2.67 0 0 .84-.27 2.75 1.02a9.58 9.58 0 012.5-.34c.85 0 1.7.11 2.5.34 1.9-1.29 2.74-1.02 2.74-1.02.57 1.39.22 2.42.11 2.67.64.7 1.03 1.59 1.03 2.68 0 3.85-2.34 4.69-4.57 4.94.36.31.68.92.68 1.85 0 1.33-.01 2.4-.01 2.73 0 .27.18.59.69.49A10.01 10.01 0 0022 12c0-5.52-4.48-9.96-10-9.96z"/></svg></a>
-          <a href="#" class="text-gray-500 hover:text-primary"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M22.23 5.924c-.793.35-1.644.586-2.538.69a4.49 4.49 0 001.982-2.48 8.847 8.847 0 01-2.826 1.082 4.487 4.487 0 00-7.673 4.092 12.744 12.744 0 01-9.261-4.697 4.48 4.48 0 001.39 5.983A4.401 4.401 0 01.88 10.96v.056a4.486 4.486 0 003.596 4.398 4.5 4.5 0 01-2.022.077 4.487 4.487 0 004.191 3.114A8.998 8.998 0 010 19.54a12.697 12.697 0 006.88 2.018c8.256 0 12.784-6.84 12.784-12.784 0-.195-.004-.39-.013-.583a9.128 9.128 0 002.242-2.322z"/></svg></a>
-        </div>
-      </div>
-      <div class="mt-6 text-center text-sm text-gray-400">© 2025 Fresh Fork Catering. All rights reserved.</div>
+        <div class="mt-6 text-center text-sm text-gray-400">© 2025 Ngara Cooks Catering. All rights reserved.</div>
     </footer>
 
     <!-- Simple mobile menu script -->
     <script>
-      const menuBtn = document.getElementById('menuBtn');
-      const mobileMenu = document.getElementById('mobileMenu');
-      function toggleMenu() {
-        mobileMenu.classList.toggle('hidden');
-      }
-      menuBtn.addEventListener('click', toggleMenu);
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        function toggleMenu() {
+            mobileMenu.classList.toggle('hidden');
+        }
+        menuBtn.addEventListener('click', toggleMenu);
     </script>
-  </body>
+</body>
+
 </html>
