@@ -92,6 +92,26 @@
         .about-slide:not(.hidden) {
             opacity: 1;
         }
+
+        /* ─── Zoom-out keyframes ─────────────────────────────── */
+        @keyframes zoomOut {
+            0% {
+                transform: scale(1.10);
+            }
+
+            /* start slightly closer */
+            100% {
+                transform: scale(1);
+            }
+
+            /* settle to normal size */
+        }
+
+        /* Class that triggers the animation on the active slide */
+        .animate-zoom img {
+            animation: zoomOut 5s ease-out forwards;
+            /* 5-second gentle zoom */
+        }
     </style>
 </head>
 
@@ -130,7 +150,7 @@
         <div id="mobileMenu" class="hidden flex-col space-y-4 px-4 pb-6 md:hidden">
             <a href="#services" class="block" onclick="toggleMenu()">Services</a>
             <a href="#menus" class="block" onclick="toggleMenu()">Menus</a>
-            <a href="#how" class="block" onclick="toggleMenu()">How It Works</a>            
+            <a href="#how" class="block" onclick="toggleMenu()">How It Works</a>
             <a href="#about" class="block" onclick="toggleMenu()">About Us</a>
             <a href="#gallery" class="block" onclick="toggleMenu()">Gallery</a>
             <a href="#contact" class="block" onclick="toggleMenu()">Contact</a>
@@ -287,21 +307,20 @@
                 <h2 class="text-3xl md:text-4xl font-semibold fade-scroll">Our Story</h2>
 
                 <p class="fade-scroll text-gray-700">
-                    Ngara Cooks began in a tiny family kitchen off Ring Road, where the
-                    aroma of fresh chapati drew neighbours long before we had a sign-board.
-                    What started as Mama Amina’s weekend cook-outs has grown into a full
-                    catering crew, but our heartbeat is still the same: <em>feed people like
-                        family, using ingredients we’d serve at our own table.</em>
+                    Ngara Cooks began as a humble start-up in the heart of Ngara, yet from day
+                    one our kitchen was built state-of-the-art—outfitted to extract the very
+                    best from every ingredient. We believe that when cutting-edge technique
+                    meets genuine care, even the simplest dish can feel extraordinary.
                 </p>
 
                 <p class="fade-scroll text-gray-700">
-                    From fundraising lunches at local schools to 300-guest garden weddings,
-                    we season every dish with stories from home—ugali shared under mango
-                    trees, sukuma wilted in cast-iron sufurias, and the laughter that
-                    follows a perfectly spiced pilau. When you choose Ngara Cooks, you’re
-                    choosing warmth, honesty, and meals that taste like childhood comfort
-                    wrapped in modern flair.
+                    Today our team is bigger, but the mission is still the same: craft honest
+                    meals that feel like home while giving every guest a memorable experience.
+                    Whether it’s a backyard birthday or a 500-seat gala, we season each plate
+                    with the passion that sparked our earliest cook-outs—ensuring quality,
+                    warmth, and a little bit of Ngara pride in every bite.
                 </p>
+
             </div>
 
             <!-- Carousel column -->
@@ -605,9 +624,16 @@
             auto;
 
         function showSlide(idx) {
+            // remove zoom class from current slide
             slides[current].classList.add('hidden');
+            slides[current].classList.remove('animate-zoom');
+
+            // pick new slide
             current = (idx + slides.length) % slides.length;
             slides[current].classList.remove('hidden');
+
+            // add zoom class to restart animation
+            slides[current].classList.add('animate-zoom');
         }
 
         prevBtn.addEventListener('click', () => {
