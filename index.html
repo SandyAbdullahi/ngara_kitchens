@@ -75,6 +75,23 @@
         .signature {
             font-family: 'Pacifico', cursive;
         }
+
+        /* ABOUT carousel */
+        .about-slide {
+            /* each slide */
+            transition: opacity 0.6s ease-in-out;
+        }
+
+        .about-slide.hidden {
+            opacity: 0;
+            pointer-events: none;
+            position: absolute;
+            inset: 0;
+        }
+
+        .about-slide:not(.hidden) {
+            opacity: 1;
+        }
     </style>
 </head>
 
@@ -88,7 +105,7 @@
                     stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7h18M3 12h18M5 17h14" />
                 </svg>
-          <span class="signature text-2xl">Ngara Kitchens</span>
+                <span class="signature text-2xl">Ngara Kitchens</span>
             </a>
             <nav class="hidden md:flex space-x-8 text-sm font-medium">
                 <a href="#services" class="hover:text-primary">Services</a>
@@ -259,6 +276,68 @@
             </div>
         </div>
     </section>
+    <!-- ABOUT US  ──────────────────────────────────────────── -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4 flex flex-col-reverse md:flex-row items-center gap-10">
+
+            <!-- Text column -->
+            <div class="w-full md:w-1/2 space-y-6">
+                <h2 class="text-3xl md:text-4xl font-semibold fade-scroll">Our Story</h2>
+
+                <p class="fade-scroll text-gray-700">
+                    Ngara Cooks began in a tiny family kitchen off Ring Road, where the
+                    aroma of fresh chapati drew neighbours long before we had a sign-board.
+                    What started as Mama Amina’s weekend cook-outs has grown into a full
+                    catering crew, but our heartbeat is still the same: <em>feed people like
+                        family, using ingredients we’d serve at our own table.</em>
+                </p>
+
+                <p class="fade-scroll text-gray-700">
+                    From fundraising lunches at local schools to 300-guest garden weddings,
+                    we season every dish with stories from home—ugali shared under mango
+                    trees, sukuma wilted in cast-iron sufurias, and the laughter that
+                    follows a perfectly spiced pilau. When you choose Ngara Cooks, you’re
+                    choosing warmth, honesty, and meals that taste like childhood comfort
+                    wrapped in modern flair.
+                </p>
+            </div>
+
+            <!-- Carousel column -->
+            <div class="w-full md:w-1/2 relative fade-scroll">
+
+                <!-- Slides -->
+                <div class="overflow-hidden rounded-xl shadow-lg">
+                    <div class="about-slide">
+                        <img src="images/about-1.jpg" class="w-full h-72 object-cover" alt="Kitchen prep">
+                    </div>
+                    <div class="about-slide hidden">
+                        <img src="images/about-2.jpg" class="w-full h-72 object-cover" alt="Family tasting session">
+                    </div>
+                    <div class="about-slide hidden">
+                        <img src="images/about-3.jpg" class="w-full h-72 object-cover" alt="Outdoor catering setup">
+                    </div>
+                </div>
+
+                <!-- Controls -->
+                <button id="aboutPrev" class="absolute top-1/2 -translate-y-1/2 left-4 bg-white/70 p-2 rounded-full backdrop-blur-sm
+                     hover:bg-white shadow">
+                    <!-- heroicons: chevron-left -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                    </svg>
+                </button>
+                <button id="aboutNext" class="absolute top-1/2 -translate-y-1/2 right-4 bg-white/70 p-2 rounded-full backdrop-blur-sm
+                     hover:bg-white shadow">
+                    <!-- heroicons: chevron-right -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
     <!-- Gallery -->
     <!-- Gallery -->
     <section id="gallery" class="py-20 bg-gray-50">
@@ -515,6 +594,31 @@
 
         // Attach observer to every element with the fade-scroll class
         document.querySelectorAll('.fade-scroll').forEach(el => observer.observe(el));
+
+        // ─── About-carousel logic ────────────────────────────────────────────
+        const slides = document.querySelectorAll('.about-slide');
+        const prevBtn = document.getElementById('aboutPrev');
+        const nextBtn = document.getElementById('aboutNext');
+        let current = 0,
+            auto;
+
+        function showSlide(idx) {
+            slides[current].classList.add('hidden');
+            current = (idx + slides.length) % slides.length;
+            slides[current].classList.remove('hidden');
+        }
+
+        prevBtn.addEventListener('click', () => {
+            clearInterval(auto); // pause auto-play on manual action
+            showSlide(current - 1);
+        });
+        nextBtn.addEventListener('click', () => {
+            clearInterval(auto);
+            showSlide(current + 1);
+        });
+
+        // auto-play every 5 s
+        auto = setInterval(() => showSlide(current + 1), 5000);
     </script>
 </body>
 
