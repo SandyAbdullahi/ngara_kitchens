@@ -37,6 +37,40 @@
         h4 {
             font-family: 'Poppins', sans-serif;
         }
+
+        /* ---------- hero fade‑in animation ---------- */
+        @keyframes fadeUp {
+            0% {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-up {
+            opacity: 0;
+        }
+
+        .fade-up.show {
+            animation: fadeUp 0.9s ease-out forwards;
+        }
+
+        /* Fade-in on scroll */
+        .fade-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        /* State added by JS when the element is in view */
+        .fade-scroll.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 </head>
 
@@ -81,29 +115,25 @@
                 onclick="toggleMenu()">Get a quote</a>
         </div>
     </header>
-
     <!-- Hero -->
-    <section class="relative pt-32 pb-28 bg-gradient-to-br from-primary-light to-primary text-white overflow-hidden">
-        <div class="container mx-auto flex flex-col-reverse md:flex-row items-center px-4 gap-10">
-            <div class="w-full md:w-1/2 text-center md:text-left space-y-8">
-                <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight">Fresh, Modern
-                    Catering for Every Occasion</h1>
-                <p class="text-xl md:text-2xl">Elevating events across Nairobi</p>
+    <section class="relative pt-36 pb-36 bg-gradient-to-br from-primary-light to-primary text-white overflow-hidden">
+        <div class="container mx-auto flex flex-col-reverse md:flex-row items-center px-4 hero-fade">
+            <div class="w-full md:w-1/2 text-center md:text-left space-y-6">
+                <h1 class="fade-up text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight">Fresh,
+                    Modern Catering for Every Occasion</h1>
+                <p class="fade-up text-lg">Elevating events across Nairobi since 2018.</p>
                 <a href="#quote"
-                    class="inline-block bg-white text-primary px-8 py-4 rounded-full font-semibold shadow hover:bg-gray-50 transition">Get
+                    class="fade-up inline-block bg-white text-primary px-8 py-4 rounded-full font-semibold shadow hover:bg-gray-50 transition">Get
                     a quote</a>
             </div>
-            <div class="w-full md:w-1/2 flex justify-center md:justify-end relative">
-                <img src="images/hero.jpg" alt="Ngara Cooks canapés"
-                    class="rounded-[3rem] shadow-2xl w-4/5 md:w-[480px] lg:w-[540px] object-cover" />
+            <div class="w-full md:w-1/2 flex justify-center mb-12 md:mb-0">
+                <img src="images/hero.jpg" alt="Catering buffet"
+                    class="fade-up rounded-[40px] shadow-2xl w-4/5 md:w-[480px]" />
             </div>
         </div>
-        <!-- Smooth single‑wave divider -->
         <svg class="absolute inset-x-0 bottom-0 w-full h-32 md:h-40 text-white pointer-events-none select-none"
             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 160" preserveAspectRatio="none">
-            <!-- One gentle cubic‑Bezier wave for a cleaner look on all screens -->
-            <path fill="currentColor" d="M0 80 C360 160 720 0 1440 80 L1440 160 L0 160 Z" />
-        </svg>
+            <path fill="currentColor" d="M0 80 C360 160 720 0 1440 80 L1440 160 L0 160 Z" /></svg>
     </section>
 
     <!-- Services -->
@@ -112,7 +142,7 @@
             <h2 class="text-3xl font-semibold text-center mb-12">Services at a Glance</h2>
             <div class="grid gap-8 md:grid-cols-3">
                 <!-- Corporate Lunches -->
-                <div class="bg-white rounded-xl shadow-md p-8 text-center hover:shadow-lg transition">
+                <div class="fade-scroll rounded-xl shadow-md p-8 text-center hover:shadow-lg transition">
                     <div class="flex justify-center mb-4 text-primary">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
                             stroke="currentColor">
@@ -125,7 +155,7 @@
                         inspired with vibrant salads, hearty mains & artisan desserts.</p>
                 </div>
                 <!-- Weddings & Parties -->
-                <div class="bg-white rounded-xl shadow-md p-8 text-center hover:shadow-lg transition">
+                <div class="fade-scroll bg-white rounded-xl shadow-md p-8 text-center hover:shadow-lg transition">
                     <div class="flex justify-center mb-4 text-primary">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
                             stroke="currentColor">
@@ -137,7 +167,7 @@
                         late‑night bites, we handle every delicious detail.</p>
                 </div>
                 <!-- Private Chef Experiences -->
-                <div class="bg-white rounded-xl shadow-md p-8 text-center hover:shadow-lg transition">
+                <div class="fade-scroll bg-white rounded-xl shadow-md p-8 text-center hover:shadow-lg transition">
                     <div class="flex justify-center mb-4 text-primary">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
                             stroke="currentColor">
@@ -159,7 +189,7 @@
             <h2 class="text-3xl font-semibold text-center mb-12">Signature Menus</h2>
             <div class="grid gap-8 md:grid-cols-3">
                 <!-- Menu card -->
-                <div class="bg-white rounded-xl shadow-md p-8 hover:shadow-lg transition">
+                <div class="fade-scroll bg-white rounded-xl shadow-md p-8 hover:shadow-lg transition">
                     <h3 class="text-xl font-semibold mb-2">Classic</h3>
                     <p class="text-primary font-semibold mb-4">KSh 3,000&nbsp;<span
                             class="text-sm font-normal text-gray-600">per person</span></p>
@@ -170,7 +200,7 @@
                     </ul>
                 </div>
                 <!-- Menu card -->
-                <div class="bg-white rounded-xl shadow-md p-8 hover:shadow-lg transition">
+                <div class="fade-scroll bg-white rounded-xl shadow-md p-8 hover:shadow-lg transition">
                     <h3 class="text-xl font-semibold mb-2">Premium</h3>
                     <p class="text-primary font-semibold mb-4">KSh 4,500&nbsp;<span
                             class="text-sm font-normal text-gray-600">per person</span></p>
@@ -181,7 +211,7 @@
                     </ul>
                 </div>
                 <!-- Menu card -->
-                <div class="bg-white rounded-xl shadow-md p-8 hover:shadow-lg transition">
+                <div class="fade-scroll bg-white rounded-xl shadow-md p-8 hover:shadow-lg transition">
                     <h3 class="text-xl font-semibold mb-2">Chef’s Table</h3>
                     <p class="text-primary font-semibold mb-4">KSh 7,500&nbsp;<span
                             class="text-sm font-normal text-gray-600">per person</span></p>
@@ -200,13 +230,13 @@
         <div class="container mx-auto px-4">
             <h2 class="text-3xl font-semibold text-center mb-12">How It Works</h2>
             <div class="grid gap-8 md:grid-cols-3">
-                <div class="flex flex-col items-center text-center space-y-4">
+                <div class="fade-scroll flex flex-col items-center text-center space-y-4">
                     <img src="images/inquiry.png" alt="Inquiry" class="w-full h-56 object-cover rounded-xl shadow-md" />
                     <h3 class="text-xl font-semibold">Inquiry</h3>
                     <p class="text-gray-600">Share the occasion, preferred date, guest count, location, dietary needs,
                         and any special theme—our team replies with a tailored proposal within 24 hours.</p>
                 </div>
-                <div class="flex flex-col items-center text-center space-y-4">
+                <div class="fade-scroll flex flex-col items-center text-center space-y-4">
                     <img src="images/menu.png" alt="Menu customization"
                         class="w-full h-56 object-cover rounded-xl shadow-md" />
                     <h3 class="text-xl font-semibold">Menu Customization</h3>
@@ -214,7 +244,7 @@
                         We’ll refine dishes around seasonality, spice level, budget, and presentation style until every
                         bite is spot‑on.</p>
                 </div>
-                <div class="flex flex-col items-center text-center space-y-4">
+                <div class="fade-scroll flex flex-col items-center text-center space-y-4">
                     <img src="images/gallery-12.jpg" alt="Event day"
                         class="w-full h-56 object-cover rounded-xl shadow-md" />
                     <h3 class="text-xl font-semibold">Event Day</h3>
@@ -232,29 +262,29 @@
             <div class="grid gap-4 md:grid-cols-3">
                 <!-- Each image has the class 'gallery-item' so JS can bind click events -->
                 <img src="images/gallery-1.jpg" alt="Gallery image 1"
-                    class="gallery-item rounded-xl shadow-md hover:shadow-lg transition object-cover h-64 w-full cursor-pointer" />
+                    class="fade-scroll gallery-item rounded-xl shadow-md hover:shadow-lg transition object-cover h-64 w-full cursor-pointer" />
                 <img src="images/gallery-2.jpg" alt="Gallery image 2"
-                    class="gallery-item rounded-xl shadow-md hover:shadow-lg transition object-cover h-64 w-full cursor-pointer" />
+                    class="fade-scroll gallery-item rounded-xl shadow-md hover:shadow-lg transition object-cover h-64 w-full cursor-pointer" />
                 <img src="images/gallery-3.jpg" alt="Gallery image 3"
-                    class="gallery-item rounded-xl shadow-md hover:shadow-lg transition object-cover h-64 w-full cursor-pointer" />
+                    class="fade-scroll gallery-item rounded-xl shadow-md hover:shadow-lg transition object-cover h-64 w-full cursor-pointer" />
                 <img src="images/gallery-4.jpg" alt="Gallery image 4"
-                    class="gallery-item rounded-xl shadow-md hover:shadow-lg transition object-cover h-64 w-full cursor-pointer" />
+                    class="fade-scroll gallery-item rounded-xl shadow-md hover:shadow-lg transition object-cover h-64 w-full cursor-pointer" />
                 <img src="images/gallery-5.jpg" alt="Gallery image 5"
-                    class="gallery-item rounded-xl shadow-md hover:shadow-lg transition object-cover h-64 w-full cursor-pointer" />
+                    class="fade-scroll gallery-item rounded-xl shadow-md hover:shadow-lg transition object-cover h-64 w-full cursor-pointer" />
                 <img src="images/gallery-6.jpg" alt="Gallery image 6"
-                    class="gallery-item rounded-xl shadow-md hover:shadow-lg transition object-cover h-64 w-full cursor-pointer" />
+                    class="fade-scroll gallery-item rounded-xl shadow-md hover:shadow-lg transition object-cover h-64 w-full cursor-pointer" />
                 <img src="images/gallery-7.jpg" alt="Gallery image 7"
-                    class="gallery-item rounded-xl shadow-md hover:shadow-lg transition object-cover h-64 w-full cursor-pointer" />
+                    class="fade-scroll gallery-item rounded-xl shadow-md hover:shadow-lg transition object-cover h-64 w-full cursor-pointer" />
                 <img src="images/gallery-8.jpg" alt="Gallery image 8"
-                    class="gallery-item rounded-xl shadow-md hover:shadow-lg transition object-cover h-64 w-full cursor-pointer" />
+                    class="fade-scroll gallery-item rounded-xl shadow-md hover:shadow-lg transition object-cover h-64 w-full cursor-pointer" />
                 <img src="images/gallery-9.jpg" alt="Gallery image 9"
-                    class="gallery-item rounded-xl shadow-md hover:shadow-lg transition object-cover h-64 w-full cursor-pointer" />
+                    class="fade-scroll gallery-item rounded-xl shadow-md hover:shadow-lg transition object-cover h-64 w-full cursor-pointer" />
                 <img src="images/gallery-10.jpg" alt="Gallery image 10"
-                    class="gallery-item rounded-xl shadow-md hover:shadow-lg transition object-cover h-64 w-full cursor-pointer" />
+                    class="fade-scroll gallery-item rounded-xl shadow-md hover:shadow-lg transition object-cover h-64 w-full cursor-pointer" />
                 <img src="images/gallery-11.jpg" alt="Gallery image 11"
-                    class="gallery-item rounded-xl shadow-md hover:shadow-lg transition object-cover h-64 w-full cursor-pointer" />
+                    class="fade-scroll gallery-item rounded-xl shadow-md hover:shadow-lg transition object-cover h-64 w-full cursor-pointer" />
                 <img src="images/gallery-12.jpg" alt="Gallery image 12"
-                    class="gallery-item rounded-xl shadow-md hover:shadow-lg transition object-cover h-64 w-full cursor-pointer" />
+                    class="fade-scroll gallery-item rounded-xl shadow-md hover:shadow-lg transition object-cover h-64 w-full cursor-pointer" />
             </div>
         </div>
     </section>
@@ -272,7 +302,7 @@
         <div class="container mx-auto px-4">
             <h2 class="text-3xl font-semibold text-center mb-12">Testimonials</h2>
             <div class="max-w-3xl mx-auto space-y-12">
-                <blockquote class="relative bg-gray-100 p-8 rounded-xl shadow">
+                <blockquote class="fade-scroll relative bg-gray-100 p-8 rounded-xl shadow">
                     <svg class="absolute -top-3 -left-3 h-8 w-8 text-primary" fill="currentColor" viewBox="0 0 24 24">
                         <path
                             d="M7.17 6A4.001 4.001 0 003 10v2a4 4 0 004 4h1a1 1 0 100-2H7a2 2 0 01-2-2v-2a2 2 0 012-2h.17A3 3 0 0010 13v-3a4 4 0 00-2.83-3.8zM17.17 6A4.001 4.001 0 0013 10v2a4 4 0 004 4h1a1 1 0 100-2h-1a2 2 0 01-2-2v-2a2 2 0 012-2h.17A3 3 0 0020 13v-3a4 4 0 00-2.83-3.8z" />
@@ -282,7 +312,7 @@
                         beyond delicious and the service impeccable.”</p>
                     <footer class="mt-4 text-sm font-semibold">— Aisha & Kim, Wedding</footer>
                 </blockquote>
-                <blockquote class="relative bg-gray-100 p-8 rounded-xl shadow">
+                <blockquote class="fade-scroll relative bg-gray-100 p-8 rounded-xl shadow">
                     <svg class="absolute -top-3 -left-3 h-8 w-8 text-primary" fill="currentColor" viewBox="0 0 24 24">
                         <path
                             d="M7.17 6A4.001 4.001 0 003 10v2a4 4 0 004 4h1a1 1 0 100-2H7a2 2 0 01-2-2v-2a2 2 0 012-2h.17A3 3 0 0010 13v-3a4 4 0 00-2.83-3.8zM17.17 6A4.001 4.001 0 0013 10v2a4 4 0 004 4h1a1 1 0 100-2h-1a2 2 0 01-2-2v-2a2 2 0 012-2h.17A3 3 0 0020 13v-3a4 4 0 00-2.83-3.8z" />
@@ -292,7 +322,7 @@
                     <footer class="mt-4 text-sm font-semibold">— David, Tech Co. CEO</footer>
                 </blockquote>
                 <!-- New testimonial -->
-                <blockquote class="relative bg-gray-100 p-8 rounded-xl shadow">
+                <blockquote class="fade-scroll relative bg-gray-100 p-8 rounded-xl shadow">
                     <svg class="absolute -top-3 -left-3 h-8 w-8 text-primary" fill="currentColor" viewBox="0 0 24 24">
                         <path
                             d="M7.17 6A4.001 4.001 0 003 10v2a4 4 0 004 4h1a1 1 0 100-2H7a2 2 0 01-2-2v-2a2 2 0 012-2h.17A3 3 0 0010 13v-3a4 4 0 00-2.83-3.8zM17.17 6A4.001 4.001 0 0013 10v2a4 4 0 004 4h1a1 1 0 100-2h-1a2 2 0 01-2-2v-2a2 2 0 012-2h.17A3 3 0 0020 13v-3a4 4 0 00-2.83-3.8z" />
@@ -303,7 +333,7 @@
                 </blockquote>
 
                 <!-- New testimonial -->
-                <blockquote class="relative bg-gray-100 p-8 rounded-xl shadow">
+                <blockquote class="fade-scroll relative bg-gray-100 p-8 rounded-xl shadow">
                     <svg class="absolute -top-3 -left-3 h-8 w-8 text-primary" fill="currentColor" viewBox="0 0 24 24">
                         <path
                             d="M7.17 6A4.001 4.001 0 003 10v2a4 4 0 004 4h1a1 1 0 100-2H7a2 2 0 01-2-2v-2a2 2 0 012-2h.17A3 3 0 0010 13v-3a4 4 0 00-2.83-3.8zM17.17 6A4.001 4.001 0 0013 10v2a4 4 0 004 4h1a1 1 0 100-2h-1a2 2 0 01-2-2v-2a2 2 0 012-2h.17A3 3 0 0020 13v-3a4 4 0 00-2.83-3.8z" />
@@ -319,9 +349,9 @@
 
     <!-- CTA Banner -->
     <section class="relative bg-gradient-to-r from-primary-light to-primary text-white py-16 text-center">
-        <h2 class="text-3xl md:text-4xl font-semibold mb-6">Let’s make your event delicious</h2>
+        <h2 class="fade-scroll text-3xl md:text-4xl font-semibold mb-6">Let’s make your event delicious</h2>
         <a href="#quote"
-            class="inline-block bg-white text-primary px-8 py-4 rounded-full font-semibold shadow hover:bg-gray-50 transition">Request
+            class="fade-scroll inline-block bg-white text-primary px-8 py-4 rounded-full font-semibold shadow hover:bg-gray-50 transition">Request
             a Quote</a>
     </section>
 
@@ -331,43 +361,43 @@
             <h2 class="text-3xl font-semibold text-center mb-8">Request a Quote</h2>
             <form action="#" method="POST" class="space-y-6 bg-white p-8 rounded-xl shadow">
                 <div class="grid md:grid-cols-2 gap-6">
-                    <div>
+                    <div class="fade-scroll">
                         <label class="block mb-2 font-medium">Name</label>
                         <input type="text"
                             class="w-full border-gray-300 rounded-md focus:ring-primary focus:border-primary"
                             placeholder="Your name" required />
                     </div>
-                    <div>
+                    <div class="fade-scroll">
                         <label class="block mb-2 font-medium">Email</label>
                         <input type="email"
                             class="w-full border-gray-300 rounded-md focus:ring-primary focus:border-primary"
                             placeholder="you@example.com" required />
                     </div>
-                    <div>
+                    <div class="fade-scroll">
                         <label class="block mb-2 font-medium">Phone</label>
                         <input type="tel"
                             class="w-full border-gray-300 rounded-md focus:ring-primary focus:border-primary"
                             placeholder="0712 345 678" />
                     </div>
-                    <div>
+                    <div class="fade-scroll">
                         <label class="block mb-2 font-medium">Event Date</label>
                         <input type="date"
                             class="w-full border-gray-300 rounded-md focus:ring-primary focus:border-primary" />
                     </div>
                 </div>
-                <div>
+                <div class="fade-scroll">
                     <label class="block mb-2 font-medium">Guest Count</label>
                     <input type="number"
                         class="w-full border-gray-300 rounded-md focus:ring-primary focus:border-primary"
                         placeholder="e.g. 120" />
                 </div>
-                <div>
+                <div class="fade-scroll">
                     <label class="block mb-2 font-medium">Message / Requirements</label>
                     <textarea rows="4" class="w-full border-gray-300 rounded-md focus:ring-primary focus:border-primary"
                         placeholder="Tell us about your event"></textarea>
                 </div>
                 <button type="submit"
-                    class="w-full bg-primary text-white py-3 rounded-full font-semibold hover:bg-primary-light transition">Send
+                    class="fade-scroll bg-primary text-white py-3 rounded-full font-semibold hover:bg-primary-light transition">Send
                     Request</button>
             </form>
         </div>
@@ -409,13 +439,14 @@
 
     <!-- Simple mobile menu script -->
     <script>
-    // Mobile menu
-      const menuBtn = document.getElementById('menuBtn');
-      const mobileMenu = document.getElementById('mobileMenu');
-      function toggleMenu() {
-        mobileMenu.classList.toggle('hidden');
-      }
-      menuBtn.addEventListener('click', toggleMenu);
+        // Mobile menu
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        function toggleMenu() {
+            mobileMenu.classList.toggle('hidden');
+        }
+        menuBtn.addEventListener('click', toggleMenu);
         // Gallery lightbox
         const galleryItems = document.querySelectorAll('.gallery-item');
         const lightbox = document.getElementById('lightbox');
@@ -443,6 +474,29 @@
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') closeLightbox();
         });
+        // ---------- hero staggered fade‑in ----------
+        document.addEventListener('DOMContentLoaded', () => {
+            const items = document.querySelectorAll('.hero-fade .fade-up');
+            items.forEach((el, idx) => {
+                setTimeout(() => el.classList.add('show'), idx * 200); // 200 ms stagger
+            });
+        });
+        // Reveal .fade-scroll elements when ~20 % of them enter the viewport
+        const observer = new IntersectionObserver(
+            (entries, obs) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('show');
+                        obs.unobserve(entry.target); // run once per element
+                    }
+                });
+            }, {
+                threshold: 0.2
+            }
+        );
+
+        // Attach observer to every element with the fade-scroll class
+        document.querySelectorAll('.fade-scroll').forEach(el => observer.observe(el));
     </script>
 </body>
 
