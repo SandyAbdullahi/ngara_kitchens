@@ -112,10 +112,28 @@
             animation: zoomOut 5s ease-out forwards;
             /* 5-second gentle zoom */
         }
+
         /* Dark, pronounced shadow for hero image */
-.shadow-deep {
-  box-shadow: 0 15px 40px -5px rgba(0, 0, 0, 0.65);
-}
+        .shadow-deep {
+            box-shadow: 0 15px 40px -5px rgba(0, 0, 0, 0.65);
+        }
+
+        /* ─── Hero intro tilt ───────────────────────────── */
+        @keyframes tiltIn {
+            0% {
+                transform: rotate(-4deg) scale(1.02);
+                opacity: 0;
+            }
+
+            100% {
+                transform: rotate(0deg) scale(1);
+                opacity: 1;
+            }
+        }
+
+        .rotate-load {
+            animation: tiltIn 0.9s ease-out forwards;
+        }
     </style>
 </head>
 
@@ -174,8 +192,7 @@
                     a quote</a>
             </div>
             <div class="w-full md:w-1/2 flex justify-center mb-12 md:mb-0">
-                <img src="images/hero.png" alt="Catering buffet"
-                    class="fade-up rounded-[40px] w-4/5 md:w-[540px]" />
+                <img src="images/hero.png" alt="Catering buffet" class="rotate-load rounded-[40px] w-4/5 md:w-[540px]" />
             </div>
         </div>
         <svg class="absolute inset-x-0 bottom-0 w-full h-32 md:h-40 text-white pointer-events-none select-none"
@@ -468,7 +485,7 @@
             </div>
         </div>
     </section>
-   
+
 
     <!-- CTA Banner -->
     <section class="relative bg-gradient-to-r from-primary-light to-primary text-white py-16 text-center">
