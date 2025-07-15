@@ -112,6 +112,10 @@
             animation: zoomOut 5s ease-out forwards;
             /* 5-second gentle zoom */
         }
+        /* Dark, pronounced shadow for hero image */
+.shadow-deep {
+  box-shadow: 0 15px 40px -5px rgba(0, 0, 0, 0.65);
+}
     </style>
 </head>
 
@@ -171,7 +175,7 @@
             </div>
             <div class="w-full md:w-1/2 flex justify-center mb-12 md:mb-0">
                 <img src="images/hero.jpg" alt="Catering buffet"
-                    class="fade-up rounded-[40px] shadow-2xl w-4/5 md:w-[480px]" />
+                    class="fade-up rounded-[40px] shadow-deep w-4/5 md:w-[480px]" />
             </div>
         </div>
         <svg class="absolute inset-x-0 bottom-0 w-full h-32 md:h-40 text-white pointer-events-none select-none"
