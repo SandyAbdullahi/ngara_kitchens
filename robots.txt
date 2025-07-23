@@ -1,0 +1,4 @@
+# /robots.txt
+User-agent: *
+Allow: /
+Sitemap: https://sandyabdullahi.github.io/ngara_kitchens/sitemap.xml
