@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#B14C4C" />
+    <title>KOMÈ | Desserts</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            light: '#d58a8a',
+                            DEFAULT: '#B14C4C',
+                            dark: '#8d3a3a',
+                        },
+                        canvas: '#D2D1CC',
+                        anchor: '#2F4F4F',
+                    },
+                },
+            },
+        };
+    </script>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .smallcaps {
+            letter-spacing: 0.24em;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+
+<body class="bg-canvas text-anchor antialiased">
+    <header class="bg-white shadow-sm">
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+            <a href="index.html" class="flex items-center space-x-2 text-primary font-semibold">
+                <span class="text-xl">KOMÈ</span>
+            </a>
+            <a href="index.html#contact" class="text-sm font-semibold text-primary hover:text-primary-dark">Enquire</a>
+        </div>
+    </header>
+
+    <main class="py-16 space-y-16">
+        <section class="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-5">
+                <p class="text-xs smallcaps text-primary">Desserts</p>
+                <h1 class="text-4xl md:text-5xl font-semibold leading-tight">Sweet finishes, crafted with care</h1>
+                <p class="text-lg text-anchor/80">From citrus tarts to flourless chocolate cakes, our pastry team builds seasonal trays, minis, and showpieces that close the meal beautifully.</p>
+                <div class="flex gap-4">
+                    <a class="inline-flex items-center gap-2 text-primary font-semibold" href="index.html#contact">
+                        <span>Plan dessert service</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33 10" class="w-7 h-3">
+                            <path fill="#B14C4C"
+                                d="m32.265 5.265-4.5 4.5a.375.375 0 0 1-.53-.53l3.86-3.86H1a.375.375 0 0 1 0-.75h30.094L27.235.765a.375.375 0 0 1 .53-.53l4.5 4.5a.375.375 0 0 1 0 .53" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="overflow-hidden shadow-lg bg-white">
+                <img src="images/dessert-display-02.jpg" alt="Dessert display" class="w-full h-full object-cover">
+            </div>
+        </section>
+
+        <section class="container mx-auto px-4 grid md:grid-cols-2 gap-12">
+            <div class="space-y-4">
+                <h2 class="text-3xl font-semibold">Dessert styles</h2>
+                <p class="text-anchor/80 text-lg leading-relaxed">Choose a dessert table of minis, plated finales, or whole cakes. We lean on citrus, chocolate, nuts, and seasonal fruit for balance.</p>
+                <ul class="space-y-2 text-anchor/80 list-disc list-inside">
+                    <li>Citrus tartlets, mascarpone cream, burnt meringue.</li>
+                    <li>Flourless chocolate cake with espresso chantilly.</li>
+                    <li>Pistachio and rose cake, cardamom syrup.</li>
+                    <li>Seasonal pavlova with macerated berries.</li>
+                </ul>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+                <div class="overflow-hidden shadow-md bg-white">
+                    <img src="images/dessert-display-01.jpg" alt="Dessert table" class="w-full h-48 object-cover">
+                </div>
+                <div class="overflow-hidden shadow-md bg-white">
+                    <img src="images/dessert-display-02.jpg" alt="Mini desserts" class="w-full h-48 object-cover">
+                </div>
+                <div class="overflow-hidden shadow-md bg-white">
+                    <img src="images/elegant-tablesetting-03.jpg" alt="Table setting" class="w-full h-48 object-cover">
+                </div>
+                <div class="overflow-hidden shadow-md bg-white">
+                    <img src="images/dessert.jpg" alt="Dessert closeup" class="w-full h-48 object-cover">
+                </div>
+            </div>
+        </section>
+
+        <section class="container mx-auto px-4">
+            <div class="bg-white shadow-md p-8 grid md:grid-cols-2 gap-8">
+                <div class="space-y-3">
+                    <p class="text-xs smallcaps text-primary">Presentation</p>
+                    <h2 class="text-2xl font-semibold">Styled to your event</h2>
+                    <ul class="space-y-2 text-anchor/80 list-disc list-inside">
+                        <li>Dessert tables with risers, florals, and signage.</li>
+                        <li>Individual plated desserts for seated dinners.</li>
+                        <li>Bite-size minis for roaming service.</li>
+                        <li>Custom inscriptions and colours on request.</li>
+                    </ul>
+                </div>
+                <div class="space-y-3">
+                    <p class="text-xs smallcaps text-primary">Dietaries</p>
+                    <ul class="space-y-2 text-anchor/80 list-disc list-inside">
+                        <li>Gluten-free and vegan options available.</li>
+                        <li>Nut-aware planning; clear labelling on site.</li>
+                        <li>Portioning guidance to match guest counts.</li>
+                        <li>Pairings with coffee or digestif service.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white py-12">
+            <div class="container mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
+                <div class="space-y-4">
+                    <p class="text-xs smallcaps text-primary">About KOMÈ</p>
+                    <h2 class="text-3xl font-semibold">Pastry with intention</h2>
+                    <p class="text-anchor/80 leading-relaxed">Our pastry team balances sweetness, texture, and brightness so desserts feel indulgent yet light. Each table is styled to feel abundant and inviting.</p>
+                </div>
+                <div class="bg-canvas p-6 shadow-md">
+                    <h3 class="text-xl font-semibold mb-3">Ready to plan?</h3>
+                    <p class="text-anchor/80 mb-4">Tell us your event style and guest count. We’ll curate a dessert lineup that fits your menu and mood.</p>
+                    <a href="index.html#contact" class="inline-flex items-center gap-2 bg-primary text-white px-5 py-3 font-semibold hover:bg-primary-dark transition">
+                        Plan dessert service
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33 10" class="w-7 h-3">
+                            <path fill="#ffffff"
+                                d="m32.265 5.265-4.5 4.5a.375.375 0 0 1-.53-.53l3.86-3.86H1a.375.375 0 0 1 0-.75h30.094L27.235.765a.375.375 0 0 1 .53-.53l4.5 4.5a.375.375 0 0 1 0 .53" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-white border-t border-anchor/10">
+        <div class="container mx-auto px-4 py-10 grid md:grid-cols-3 gap-8">
+            <div class="space-y-2">
+                <div class="text-xl font-semibold text-primary">KOMÈ Catering</div>
+                <p class="text-anchor/80">Ngara, Nairobi</p>
+                <p class="text-anchor/80">(+254) 712 345 678</p>
+                <p class="text-anchor/80">hello@ngaracooks.co.ke</p>
+            </div>
+            <div class="space-y-3">
+                <h4 class="font-semibold text-anchor">Plan with us</h4>
+                <a class="inline-flex items-center gap-2 text-primary font-semibold" href="index.html#contact">
+                    <span>Request a quote</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33 10" class="w-7 h-3">
+                        <path fill="#B14C4C"
+                            d="m32.265 5.265-4.5 4.5a.375.375 0 0 1-.53-.53l3.86-3.86H1a.375.375 0 0 1 0-.75h30.094L27.235.765a.375.375 0 0 1 .53-.53l4.5 4.5a.375.375 0 0 1 0 .53" />
+                    </svg>
+                </a>
+                <a class="inline-flex items-center gap-2 text-primary font-semibold" href="index.html">
+                    <span>Back to home</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33 10" class="w-7 h-3">
+                        <path fill="#B14C4C"
+                            d="m32.265 5.265-4.5 4.5a.375.375 0 0 1-.53-.53l3.86-3.86H1a.375.375 0 0 1 0-.75h30.094L27.235.765a.375.375 0 0 1 .53-.53l4.5 4.5a.375.375 0 0 1 0 .53" />
+                    </svg>
+                </a>
+            </div>
+            <div class="space-y-3">
+                <h4 class="font-semibold text-anchor">Follow</h4>
+                <div class="flex space-x-4 text-anchor/80">
+                    <a href="#" class="hover:text-primary">Instagram</a>
+                    <a href="#" class="hover:text-primary">Facebook</a>
+                </div>
+            </div>
+        </div>
+        <div class="text-center text-sm text-anchor/70 pb-6">Sweet endings your guests will remember.</div>
+    </footer>
+</body>
+
+</html>
