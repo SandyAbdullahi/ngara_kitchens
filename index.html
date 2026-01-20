@@ -69,22 +69,22 @@
         }
     </script>
 
-    <link rel="preconnect" href="https://fonts.bunny.net" />
-    <link href="https://fonts.bunny.net/css?family=poppins:400,600|inter:400,500|pacifico:400" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@400;500;600&display=swap"
+        rel="stylesheet">
 
     <style>
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Montserrat', sans-serif;
         }
 
         h1,
         h2,
         h3,
         h4 {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Cormorant Garamond', serif;
         }
 
         .kome-brand {
@@ -161,7 +161,7 @@
             <div class="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
                 <div class="space-y-6">
                     <p class="text-xs smallcaps text-primary-dark">Catering</p>
-                    <h1 class="text-4xl md:text-5xl font-semibold leading-tight">Catering at KOMÈ</h1>
+                    <h1 class="text-4xl md:text-5xl font-semibold leading-tight text-primary">KOMÈ</h1>
                     <p class="text-lg text-gray-700">Whether you’re planning an intimate dinner or a 500-guest gala, we bring abundant salads, generous platters, and calm, attentive service—fresh from our Ngara kitchen to your table.</p>
                     <div class="flex flex-col sm:flex-row gap-4">
                         <a class="arrow-link" href="#contact">
@@ -181,7 +181,7 @@
                     </div>
                 </div>
                 <div class="overflow-hidden card-shadow">
-                    <img src="images/gallery-hero-02.jpg" alt="Abundant KOMÈ catering spread"
+                    <img src="images/gallery-hero-01.jpg" alt="Abundant KOMÈ catering spread"
                         class="w-full h-[440px] object-cover">
                 </div>
             </div>
@@ -200,7 +200,7 @@
                 <div class="relative">
                     <div class="absolute -left-6 -top-6 w-24 h-24 bg-white/70 border border-primary/30 hidden md:block"></div>
                     <div class="overflow-hidden shadow-lg bg-white h-80 md:h-[26rem]">
-                        <img src="images/buffet-spread-02.jpg" alt="KOMÈ buffet spread with seasonal dishes" class="w-full h-full object-cover object-center">
+                        <img src="images/Kitchen.jpg" alt="KOMÈ kitchen team at work" class="w-full h-full object-cover object-center">
                     </div>
                 </div>
             </div>
@@ -208,10 +208,10 @@
 
         <!-- Services grid -->
         <section id="paths" class="py-16 bg-canvas">
-            <div class="container mx-auto px-4">
+            <div class="container mx-auto px-2 sm:px-4">
                 <h2 class="text-3xl font-semibold text-center mb-12">Where we shine</h2>
-                <div class="grid gap-8 md:grid-cols-3">
-                    <div class="group space-y-4">
+                <div class="flex flex-wrap justify-center gap-6 md:gap-8">
+                    <div class="group space-y-4 w-full sm:w-[340px] md:w-[320px] lg:w-[360px]">
                         <div class="relative overflow-hidden shadow-md">
                             <img src="images/private-party-02.jpg" alt="Private dining" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105">
                         </div>
@@ -223,7 +223,7 @@
                             </svg>
                         </a>
                     </div>
-                    <div class="group space-y-4">
+                    <div class="group space-y-4 w-full sm:w-[340px] md:w-[320px] lg:w-[360px]">
                         <div class="relative overflow-hidden shadow-md">
                             <img src="images/corporate-event-02.jpg" alt="At work" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105">
                         </div>
@@ -235,7 +235,7 @@
                             </svg>
                         </a>
                     </div>
-                    <div class="group space-y-4">
+                    <div class="group space-y-4 w-full sm:w-[340px] md:w-[320px] lg:w-[360px]">
                         <div class="relative overflow-hidden shadow-md">
                             <img src="images/event-highlights-02.jpg" alt="Events" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105">
                         </div>
@@ -247,7 +247,7 @@
                             </svg>
                         </a>
                     </div>
-                    <div class="group space-y-4">
+                    <div class="group space-y-4 w-full sm:w-[340px] md:w-[320px] lg:w-[360px]">
                         <div class="relative overflow-hidden shadow-md">
                             <img src="images/dessert-display-02.jpg" alt="Desserts" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105">
                         </div>
@@ -259,7 +259,7 @@
                             </svg>
                         </a>
                     </div>
-                    <div class="group space-y-4">
+                    <div class="group space-y-4 w-full sm:w-[340px] md:w-[320px] lg:w-[360px]">
                         <div class="relative overflow-hidden shadow-md">
                             <img src="images/event-setup-02.jpg" alt="Partner venues" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105">
                         </div>
@@ -292,42 +292,42 @@
                     </a>
                 </div>
 
-                <div id="contact" class="bg-white rounded-2xl p-8 card-shadow">
+                <div id="contact" class="bg-white p-8 card-shadow">
                     <h3 class="text-2xl font-semibold mb-6">Tell us about your event</h3>
                     <form class="space-y-5">
                         <div class="grid md:grid-cols-2 gap-4">
                             <div>
                                 <label class="block mb-2 font-medium">Name</label>
-                                <input type="text" class="w-full border border-gray-200 rounded-md px-3 py-2 focus:ring-primary focus:border-primary" placeholder="Your name" required>
+                                <input type="text" class="w-full border border-gray-200 px-3 py-2 focus:ring-primary focus:border-primary" placeholder="Your name" required>
                             </div>
                             <div>
                                 <label class="block mb-2 font-medium">Email</label>
-                                <input type="email" class="w-full border border-gray-200 rounded-md px-3 py-2 focus:ring-primary focus:border-primary" placeholder="you@example.com" required>
+                                <input type="email" class="w-full border border-gray-200 px-3 py-2 focus:ring-primary focus:border-primary" placeholder="you@example.com" required>
                             </div>
                             <div>
                                 <label class="block mb-2 font-medium">Phone</label>
-                                <input type="tel" class="w-full border border-gray-200 rounded-md px-3 py-2 focus:ring-primary focus:border-primary" placeholder="0712 345 678">
+                                <input type="tel" class="w-full border border-gray-200 px-3 py-2 focus:ring-primary focus:border-primary" placeholder="0712 345 678">
                             </div>
                             <div>
                                 <label class="block mb-2 font-medium">Event type</label>
-                                <input type="text" class="w-full border border-gray-200 rounded-md px-3 py-2 focus:ring-primary focus:border-primary" placeholder="Wedding, corporate lunch, tasting">
+                                <input type="text" class="w-full border border-gray-200 px-3 py-2 focus:ring-primary focus:border-primary" placeholder="Wedding, corporate lunch, tasting">
                             </div>
                         </div>
                         <div class="grid md:grid-cols-2 gap-4">
                             <div>
                                 <label class="block mb-2 font-medium">Date</label>
-                                <input type="date" class="w-full border border-gray-200 rounded-md px-3 py-2 focus:ring-primary focus:border-primary">
+                                <input type="date" class="w-full border border-gray-200 px-3 py-2 focus:ring-primary focus:border-primary">
                             </div>
                             <div>
                                 <label class="block mb-2 font-medium">Guests</label>
-                                <input type="number" class="w-full border border-gray-200 rounded-md px-3 py-2 focus:ring-primary focus:border-primary" placeholder="e.g. 150">
+                                <input type="number" class="w-full border border-gray-200 px-3 py-2 focus:ring-primary focus:border-primary" placeholder="e.g. 150">
                             </div>
                         </div>
                         <div>
                             <label class="block mb-2 font-medium">Notes</label>
-                            <textarea rows="4" class="w-full border border-gray-200 rounded-md px-3 py-2 focus:ring-primary focus:border-primary" placeholder="Dietary needs, service style, rentals, timings"></textarea>
+                            <textarea rows="4" class="w-full border border-gray-200 px-3 py-2 focus:ring-primary focus:border-primary" placeholder="Dietary needs, service style, rentals, timings"></textarea>
                         </div>
-                        <button type="submit" class="w-full bg-primary text-white py-3 rounded-md font-semibold hover:bg-primary-dark transition">Send enquiry</button>
+                        <button type="submit" class="w-full bg-primary text-white py-3 font-semibold hover:bg-primary-dark transition">Send enquiry</button>
                     </form>
                 </div>
             </div>
