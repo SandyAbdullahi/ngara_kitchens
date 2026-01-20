@@ -45,6 +45,17 @@
             letter-spacing: 0.24em;
             text-transform: uppercase;
         }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .reveal.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 </head>
 
@@ -65,7 +76,7 @@
             </a>
         </div>
         <section class="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
-            <div class="space-y-5">
+            <div class="space-y-5 reveal">
                 <p class="text-xs smallcaps text-primary">Private dining</p>
                 <h1 class="text-4xl md:text-5xl font-semibold leading-tight">Chef-led dinners at yours</h1>
                 <p class="text-lg text-anchor/80">From intimate tastings to milestone celebrations, we design multi-course experiences cooked on-site—pairings, plating, and warm service included.</p>
@@ -79,13 +90,13 @@
                     </a>
                 </div>
             </div>
-            <div class="overflow-hidden shadow-lg bg-white">
+            <div class="overflow-hidden shadow-lg bg-white reveal">
                 <img src="images/private-party-02.jpg" alt="Private dining spread" class="w-full h-full object-cover">
             </div>
         </section>
 
         <section class="container mx-auto px-4 grid md:grid-cols-2 gap-12">
-            <div class="space-y-4">
+            <div class="space-y-4 reveal">
                 <h2 class="text-3xl font-semibold">How we host</h2>
                 <p class="text-anchor/80 text-lg leading-relaxed">We bring a full kitchen setup—burners, mise en place, serviceware—and cook every course in your home. You choose the level of interaction: chef’s counter storytelling or quiet, unobtrusive execution.</p>
                 <ul class="space-y-2 text-anchor/80 list-disc list-inside">
@@ -95,7 +106,7 @@
                     <li>Dietary notes handled in advance so every guest feels cared for.</li>
                 </ul>
             </div>
-            <div class="grid grid-cols-2 gap-4">
+            <div class="grid grid-cols-2 gap-4 reveal">
                 <div class="overflow-hidden shadow-md bg-white">
                     <img src="images/private-party-01.jpg" alt="Table set for private dining" class="w-full h-48 object-cover">
                 </div>
@@ -112,7 +123,7 @@
         </section>
 
         <section class="container mx-auto px-4">
-            <div class="bg-white shadow-md p-8 grid md:grid-cols-2 gap-8">
+            <div class="bg-white shadow-md p-8 grid md:grid-cols-2 gap-8 reveal">
                 <div class="space-y-3">
                     <p class="text-xs smallcaps text-primary">Sample flow</p>
                     <h2 class="text-2xl font-semibold">A night with KOMÈ</h2>
@@ -138,7 +149,7 @@
 
         <section class="bg-white py-12">
             <div class="container mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
-                <div class="space-y-4">
+                <div class="space-y-4 reveal">
                     <p class="text-xs smallcaps text-primary">About KOMÈ</p>
                     <h2 class="text-3xl font-semibold">Ngara roots, crafted experiences</h2>
                     <p class="text-anchor/80 leading-relaxed">We grew inside Coricom, a creative block in Ngara. Every menu balances abundance with intention: bold flavors, thoughtful plating, and service that feels calm and warm.</p>
@@ -193,6 +204,19 @@
         </div>
         <div class="text-center text-sm text-anchor/70 pb-6">Let’s make your next dinner unforgettable.</div>
     </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                    obs.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
 </body>
 
 </html>

@@ -45,6 +45,17 @@
             letter-spacing: 0.24em;
             text-transform: uppercase;
         }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .reveal.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 </head>
 
@@ -65,7 +76,7 @@
             </a>
         </div>
         <section class="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
-            <div class="space-y-5">
+            <div class="space-y-5 reveal">
                 <p class="text-xs smallcaps text-primary">Partner venues</p>
                 <h1 class="text-4xl md:text-5xl font-semibold leading-tight">Spaces we love to cater</h1>
                 <p class="text-lg text-anchor/80">We collaborate with distinctive venues across Nairobi—gardens, galleries, rooftops—so you get a beautiful setting and a team that knows it well.</p>
@@ -79,13 +90,13 @@
                     </a>
                 </div>
             </div>
-            <div class="overflow-hidden shadow-lg bg-white">
+            <div class="overflow-hidden shadow-lg bg-white reveal">
                 <img src="images/event-setup-02.jpg" alt="Partner venue setup" class="w-full h-80 object-cover">
             </div>
         </section>
 
         <section class="container mx-auto px-4 grid md:grid-cols-2 gap-12">
-            <div class="space-y-4">
+            <div class="space-y-4 reveal">
                 <h2 class="text-3xl font-semibold">Venue types</h2>
                 <p class="text-anchor/80 text-lg leading-relaxed">We match menus and service style to the venue: open-air gardens, contemporary galleries, rooftops with views, or intimate lofts.</p>
                 <ul class="space-y-2 text-anchor/80 list-disc list-inside">
@@ -95,7 +106,7 @@
                     <li>Private homes and estates with full kitchen setup.</li>
                 </ul>
             </div>
-            <div class="grid grid-cols-2 gap-4">
+            <div class="grid grid-cols-2 gap-4 reveal">
                 <div class="overflow-hidden shadow-md bg-white">
                     <img src="images/event-setup-01.jpg" alt="Garden venue" class="w-full h-48 object-cover">
                 </div>
@@ -112,7 +123,7 @@
         </section>
 
         <section class="container mx-auto px-4">
-            <div class="bg-white shadow-md p-8 grid md:grid-cols-2 gap-8">
+            <div class="bg-white shadow-md p-8 grid md:grid-cols-2 gap-8 reveal">
                 <div class="space-y-3">
                     <p class="text-xs smallcaps text-primary">What we handle</p>
                     <h2 class="text-2xl font-semibold">Making venues effortless</h2>
@@ -137,12 +148,12 @@
 
         <section class="bg-white py-12">
             <div class="container mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
-                <div class="space-y-4">
+                <div class="space-y-4 reveal">
                     <p class="text-xs smallcaps text-primary">About KOMÈ</p>
                     <h2 class="text-3xl font-semibold">Spaces we know, service you trust</h2>
                     <p class="text-anchor/80 leading-relaxed">We’ve catered in venues across Nairobi and beyond, adapting kitchens and teams to each site. We bring calm coordination so you can enjoy the day.</p>
                 </div>
-                <div class="bg-canvas p-6 shadow-md">
+                <div class="bg-canvas p-6 shadow-md reveal">
                     <h3 class="text-xl font-semibold mb-3">Ready to choose a venue?</h3>
                     <p class="text-anchor/80 mb-4">Tell us your event style and headcount. We’ll shortlist spaces and build a menu that suits the setting.</p>
                     <a href="index.html#contact" class="inline-flex items-center gap-2 bg-primary text-white px-5 py-3 font-semibold hover:bg-primary-dark transition">
@@ -192,6 +203,19 @@
         </div>
         <div class="text-center text-sm text-anchor/70 pb-6">Let’s pair you with the perfect venue.</div>
     </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                    obs.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
 </body>
 
 </html>

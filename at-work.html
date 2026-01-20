@@ -45,6 +45,17 @@
             letter-spacing: 0.24em;
             text-transform: uppercase;
         }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .reveal.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 </head>
 
@@ -65,7 +76,7 @@
             </a>
         </div>
         <section class="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
-            <div class="space-y-5">
+            <div class="space-y-5 reveal">
                 <p class="text-xs smallcaps text-primary">At work</p>
                 <h1 class="text-4xl md:text-5xl font-semibold leading-tight">Fuel for teams and clients</h1>
                 <p class="text-lg text-anchor/80">Vibrant salads, hearty mains, and easy-to-serve trays tailored for meetings, offsites, and launches—delivered ready or cooked on-site.</p>
@@ -79,13 +90,13 @@
                     </a>
                 </div>
             </div>
-            <div class="overflow-hidden shadow-lg bg-white">
+            <div class="overflow-hidden shadow-lg bg-white reveal">
                 <img src="images/corporate-event-02.jpg" alt="Corporate catering" class="w-full h-80 object-cover">
             </div>
         </section>
 
         <section class="container mx-auto px-4 grid md:grid-cols-2 gap-12">
-            <div class="space-y-4">
+            <div class="space-y-4 reveal">
                 <h2 class="text-3xl font-semibold">Workday-friendly menus</h2>
                 <p class="text-anchor/80 text-lg leading-relaxed">We build spreads that travel well and stay fresh through long meetings—balanced salads, protein-forward mains, and plenty of colour for the table.</p>
                 <ul class="space-y-2 text-anchor/80 list-disc list-inside">
@@ -95,7 +106,7 @@
                     <li>Barista-style coffee and mocktail stations on request.</li>
                 </ul>
             </div>
-            <div class="grid grid-cols-2 gap-4">
+            <div class="grid grid-cols-2 gap-4 reveal">
                 <div class="overflow-hidden shadow-md bg-white">
                     <img src="images/corporate-event-01.jpg" alt="Office buffet" class="w-full h-48 object-cover">
                 </div>
@@ -112,7 +123,7 @@
         </section>
 
         <section class="container mx-auto px-4">
-            <div class="bg-white shadow-md p-8 grid md:grid-cols-2 gap-8">
+            <div class="bg-white shadow-md p-8 grid md:grid-cols-2 gap-8 reveal">
                 <div class="space-y-3">
                     <p class="text-xs smallcaps text-primary">Service tiers</p>
                     <h2 class="text-2xl font-semibold">Choose the format</h2>
@@ -137,12 +148,12 @@
 
         <section class="bg-white py-12">
             <div class="container mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
-                <div class="space-y-4">
+                <div class="space-y-4 reveal">
                     <p class="text-xs smallcaps text-primary">About KOMÈ</p>
                     <h2 class="text-3xl font-semibold">Calm, efficient workplace catering</h2>
                     <p class="text-anchor/80 leading-relaxed">We operate out of Ngara with a team trained for punctual deliveries and polished service. Count on us to keep meetings focused and guests well-fed.</p>
                 </div>
-                <div class="bg-canvas p-6 shadow-md">
+                <div class="bg-canvas p-6 shadow-md reveal">
                     <h3 class="text-xl font-semibold mb-3">Ready to book?</h3>
                     <p class="text-anchor/80 mb-4">Share your headcount, timing, and dietary mix. We’ll send a proposal that fits your schedule and budget.</p>
                     <a href="index.html#contact" class="inline-flex items-center gap-2 bg-primary text-white px-5 py-3 font-semibold hover:bg-primary-dark transition">
@@ -192,6 +203,19 @@
         </div>
         <div class="text-center text-sm text-anchor/70 pb-6">Let’s keep your team inspired and well-fed.</div>
     </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                    obs.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
 </body>
 
 </html>
