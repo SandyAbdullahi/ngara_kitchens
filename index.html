@@ -2,58 +2,59 @@
 <html lang="en">
 
 <head>
-    <meta name="theme-color" content="#3ED07A" />
+    <meta name="theme-color" content="#B14C4C" />
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- ── Social-preview metadata  ───────────────────────────── -->
-    <!-- Primary META -->
     <link rel="canonical" href="https://sandyabdullahi.github.io/ngara_kitchens/">
 
     <link rel="icon" href="images/hero.png" type="image/png" />
-    <title>KOMÈ – Fresh, Modern Catering in Nairobi</title>
+    <title>KOMÈ Catering | Thoughtful Food, Effortless Events</title>
     <meta name="description"
-        content="KOMÈ delivers down-to-earth, chef-driven catering for weddings, corporates, and private events across Nairobi." />
+        content="KOMÈ caters weddings, corporates, and private gatherings across Nairobi with generous, seasonal menus and calm, attentive service." />
 
     <!-- Open Graph (Facebook, LinkedIn, Slack…) -->
     <meta property="og:url" content="https://sandyabdullahi.github.io/ngara_kitchens/" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="KOMÈ – Fresh, Modern Catering" />
+    <meta property="og:title" content="KOMÈ Catering | Thoughtful Food, Effortless Events" />
     <meta property="og:description"
-        content="Down-to-earth dishes, state-of-the-art kitchen, served with warmth and passion." />
+        content="Generous salads, abundant spreads, calm service. KOMÈ brings the kitchen to you." />
     <meta property="og:image" content="https://sandyabdullahi.github.io/ngara_kitchens/images/preview.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@YourHandle" /> <!-- optional -->
-    <meta name="twitter:title" content="KOMÈ – Fresh, Modern Catering" />
+    <meta name="twitter:site" content="@YourHandle" />
+    <meta name="twitter:title" content="KOMÈ Catering | Thoughtful Food, Effortless Events" />
     <meta name="twitter:description"
-        content="Humble roots, unforgettable flavour. Book KOMÈ for your next event." />
+        content="Abundant, seasonal catering for intimate dinners and big celebrations." />
     <meta name="twitter:image" content="https://sandyabdullahi.github.io/ngara_kitchens/images/preview.png" />
 
-    <!-- Fallback for older clients (not strictly required) -->
     <link rel="image_src" href="https://sandyabdullahi.github.io/ngara_kitchens/images/preview.png">
     <!-- ───────────────────────────────────────────────────────── -->
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Heroicons CDN (outline) -->
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
                         primary: {
-                            light: '#3ED07A',
-                            DEFAULT: '#11B1B4',
+                            light: '#d58a8a',
+                            DEFAULT: '#B14C4C', // Signature
+                            dark: '#8d3a3a',
                         },
+                        canvas: '#D2D1CC', // Warm stone
+                        anchor: '#2F4F4F', // Dark slate
                     },
                 },
             },
         };
     </script>
+
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
@@ -72,7 +73,8 @@
     <link href="https://fonts.bunny.net/css?family=poppins:400,600|inter:400,500|pacifico:400" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&display=swap" rel="stylesheet">
+
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -85,118 +87,47 @@
             font-family: 'Poppins', sans-serif;
         }
 
-        /* ---------- hero fade‑in animation ---------- */
-        @keyframes fadeUp {
-            0% {
-                opacity: 0;
-                transform: translateY(24px);
-            }
-
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .fade-up {
-            opacity: 0;
-        }
-
-        .fade-up.show {
-            animation: fadeUp 0.9s ease-out forwards;
-        }
-
-        /* Fade-in on scroll */
-        .fade-scroll {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        }
-
-        /* State added by JS when the element is in view */
-        .fade-scroll.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .signature {
-            font-family: 'Pacifico', cursive;
-        }
-
         .kome-brand {
             font-family: 'Cormorant Garamond', serif;
             font-weight: 600;
-            font-size: 1.5rem;
-            letter-spacing: 0.05em;
+            font-size: 1.4rem;
+            letter-spacing: 0.06em;
         }
 
-        /* ABOUT carousel */
-        .about-slide {
-            /* each slide */
-            transition: opacity 0.6s ease-in-out;
+        .smallcaps {
+            letter-spacing: 0.24em;
+            text-transform: uppercase;
         }
 
-        .about-slide.hidden {
-            opacity: 0;
-            pointer-events: none;
-            position: absolute;
-            inset: 0;
+        .arrow-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+            color: #B14C4C;
         }
 
-        .about-slide:not(.hidden) {
-            opacity: 1;
+        .arrow-link span {
+            text-decoration: underline;
+            text-underline-offset: 6px;
         }
 
-        /* ─── Zoom-out keyframes ─────────────────────────────── */
-        @keyframes zoomOut {
-            0% {
-                transform: scale(1.10);
-            }
-
-            /* start slightly closer */
-            100% {
-                transform: scale(1);
-            }
-
-            /* settle to normal size */
+        .arrow-link svg {
+            width: 28px;
+            height: 10px;
         }
 
-        /* Class that triggers the animation on the active slide */
-        .animate-zoom img {
-            animation: zoomOut 5s ease-out forwards;
-            /* 5-second gentle zoom */
-        }
-
-        /* Dark, pronounced shadow for hero image */
-        .shadow-deep {
-            box-shadow: 0 15px 40px -5px rgba(0, 0, 0, 0.65);
-        }
-
-        /* ─── Hero intro tilt ───────────────────────────── */
-        @keyframes tiltIn {
-            0% {
-                transform: rotate(-4deg) scale(1.02);
-                opacity: 0;
-            }
-
-            100% {
-                transform: rotate(0deg) scale(1);
-                opacity: 1;
-            }
-        }
-
-        .rotate-load {
-            animation: tiltIn 0.9s ease-out forwards;
+        .card-shadow {
+            box-shadow: 0 18px 40px -18px rgba(0, 0, 0, 0.2);
         }
     </style>
 </head>
 
-<body class="bg-white text-gray-800 antialiased">
+<body class="bg-canvas text-anchor antialiased">
     <!-- Navigation -->
-    <header class="fixed inset-x-0 top-0 z-30 bg-white/70 backdrop-blur-md shadow-sm">
+    <header class="fixed inset-x-0 top-0 z-30 bg-white/90 backdrop-blur shadow-sm">
         <div class="container mx-auto flex items-center justify-between px-4 py-3">
-            <a href="#" class="flex items-center space-x-2 text-primary font-semibold text-lg">
-                <!-- Logo icon -->
+            <a href="#top" class="flex items-center space-x-2 text-primary font-semibold text-lg">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                     stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7h18M3 12h18M5 17h14" />
@@ -204,17 +135,11 @@
                 <span class="kome-brand">KOMÈ</span>
             </a>
             <nav class="hidden md:flex space-x-8 text-sm font-medium">
-                <a href="#services" class="hover:text-primary">Services</a>
-                <a href="#how" class="hover:text-primary">How&nbsp;It&nbsp;Works</a>
-                <a href="#menus" class="hover:text-primary">Menus</a>
-                <a href="#about" class="hover:text-primary">About&nbsp;Us</a>
-                <a href="#gallery" class="hover:text-primary">Gallery</a>
-                <a href="#contact" class="hover:text-primary">Contact</a>
+                <a href="#paths" class="hover:text-primary">Services</a>
+                <a href="#story" class="hover:text-primary">About</a>
+                <a href="#faq" class="hover:text-primary">FAQs</a>
+                <a href="#contact" class="hover:text-primary">Enquire</a>
             </nav>
-            <a href="#quote"
-                class="hidden md:inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-primary-light transition">Get
-                a quote</a>
-            <!-- Mobile menu button -->
             <button id="menuBtn" class="md:hidden">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                     stroke="currentColor">
@@ -222,573 +147,275 @@
                 </svg>
             </button>
         </div>
-        <!-- Mobile menu dropdown -->
-        <div id="mobileMenu" class="hidden flex-col space-y-4 px-4 pb-6 md:hidden">
-            <a href="#services" class="block" onclick="toggleMenu()">Services</a>
-            <a href="#how" class="block" onclick="toggleMenu()">How It Works</a>
-            <a href="#menus" class="block" onclick="toggleMenu()">Menus</a>
-            <a href="#about" class="block" onclick="toggleMenu()">About Us</a>
-            <a href="#gallery" class="block" onclick="toggleMenu()">Gallery</a>
-            <a href="#contact" class="block" onclick="toggleMenu()">Contact</a>
-            <a href="#quote" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-semibold"
-                onclick="toggleMenu()">Get a quote</a>
+        <div id="mobileMenu" class="hidden flex-col space-y-4 px-4 pb-4 md:hidden">
+            <a href="#paths" class="block" onclick="toggleMenu()">Services</a>
+            <a href="#story" class="block" onclick="toggleMenu()">About</a>
+            <a href="#faq" class="block" onclick="toggleMenu()">FAQs</a>
+            <a href="#contact" class="block" onclick="toggleMenu()">Enquire</a>
         </div>
     </header>
-    <!-- Hero -->
-    <section class="relative pt-36 pb-36 bg-gradient-to-br from-primary-light to-primary text-white overflow-hidden">
-        <div class="container mx-auto flex flex-col-reverse md:flex-row items-center px-4 hero-fade">
-            <div class="w-full md:w-1/2 text-center md:text-left space-y-6">
-                <h1 class="fade-up text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight">Fresh,
-                    Modern Catering for Every Occasion</h1>
-                <p class="fade-up text-lg">Elevating events across Nairobi</p>
-                <a href="#quote"
-                    class="fade-up inline-block bg-white text-primary px-8 py-4 rounded-full font-semibold shadow hover:bg-gray-50 transition">Get
-                    a quote</a>
-            </div>
-            <div class="w-full md:w-1/2 flex justify-center mb-12 md:mb-0">
-                <img src="images/hero.png" alt="Catering buffet"
-                    class="rotate-load rounded-[40px] w-4/5 md:w-[540px]" />
-            </div>
-        </div>
-        <svg class="absolute inset-x-0 bottom-0 w-full h-32 md:h-40 text-white pointer-events-none select-none"
-            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 160" preserveAspectRatio="none">
-            <path fill="currentColor" d="M0 80 C360 160 720 0 1440 80 L1440 160 L0 160 Z" /></svg>
-    </section>
 
-    <!-- About KOMÉ Section (Ottolenghi Catering Style) -->
-    <section class="py-24 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row gap-12 items-start">
-                <!-- Text content (left) -->
-                <div class="w-full md:w-1/2 space-y-6">
-                    <div class="fade-scroll">
-                        <p class="text-xs font-semibold text-primary uppercase tracking-widest">About Our Catering</p>
-                    </div>
-                    <h2 class="text-4xl md:text-5xl font-semibold fade-scroll">Catering at KOMÉ</h2>
-                    
-                    <p class="fade-scroll text-gray-700 text-lg leading-relaxed">
-                        Tucked inside Coricom, a quiet creative block in Ngara, KOMÉ grew out of a community of makers, readers and dreamers.
-                    </p>
-                    
-                    <p class="fade-scroll text-gray-700 text-lg leading-relaxed">
-                        At KOMÉ, we cook with intention, choosing ingredients thoughtfully and preparing food that feels balanced and nourishing.
-                    </p>
-                    
-                    <p class="fade-scroll text-gray-700 text-lg leading-relaxed">
-                        We believe good food begins with awareness of where it comes from, how it is prepared and the connection it creates beyond our kitchen.
-                    </p>
-
-                    <div class="pt-4">
-                        <a href="#quote" class="fade-scroll inline-block bg-primary text-white px-8 py-3 rounded-full font-semibold hover:bg-primary-light transition">
-                            Get a quote
+    <main id="top" class="pt-28">
+        <!-- Hero -->
+        <section class="bg-white py-16">
+            <div class="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-end">
+                <div class="space-y-6">
+                    <p class="text-xs smallcaps text-primary-dark">Catering</p>
+                    <h1 class="text-4xl md:text-5xl font-semibold leading-tight">Catering at KOMÈ</h1>
+                    <p class="text-lg text-gray-700">Whether you’re planning an intimate dinner or a 500-guest gala, we bring abundant salads, generous platters, and calm, attentive service—fresh from our Ngara kitchen to your table.</p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a class="arrow-link" href="#contact">
+                            <span>Plan your event</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33 10">
+                                <path fill="#B14C4C"
+                                    d="m32.265 5.265-4.5 4.5a.375.375 0 0 1-.53-.53l3.86-3.86H1a.375.375 0 0 1 0-.75h30.094L27.235.765a.375.375 0 0 1 .53-.53l4.5 4.5a.375.375 0 0 1 0 .53" />
+                            </svg>
+                        </a>
+                        <a class="arrow-link" href="#faq">
+                            <span>View FAQs</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33 10">
+                                <path fill="#B14C4C"
+                                    d="m32.265 5.265-4.5 4.5a.375.375 0 0 1-.53-.53l3.86-3.86H1a.375.375 0 0 1 0-.75h30.094L27.235.765a.375.375 0 0 1 .53-.53l4.5 4.5a.375.375 0 0 1 0 .53" />
+                            </svg>
                         </a>
                     </div>
                 </div>
-
-                <!-- Image (right) -->
-                <div class="w-full md:w-1/2">
-                    <img src="images/buffet-spread-01.jpg" alt="KOMÉ catering spread" class="fade-scroll w-full h-[26rem] rounded-lg shadow-lg object-cover" />
+                <div class="overflow-hidden rounded-[28px] card-shadow">
+                    <img src="images/gallery-hero-02.jpg" alt="Abundant KOMÈ catering spread"
+                        class="w-full h-[440px] object-cover">
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Services -->
-    <section id="services" class="py-20 bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-semibold text-center mb-16">Services at a Glance</h2>
-            <div class="grid gap-8 md:grid-cols-3">
-                <!-- Corporate Lunches -->
-                <div class="fade-scroll rounded-xl shadow-md overflow-hidden hover:shadow-xl transition">
-                    <img src="images/corporate-event-01.jpg" alt="Corporate lunch" class="w-full h-48 object-cover" />
-                    <div class="p-8 text-center">
-                        <h3 class="text-xl font-semibold mb-2">Corporate Lunches</h3>
-                        <p class="text-gray-600">Wholesome, seasonal menus delivered hot to your office—keep the team inspired with vibrant salads, hearty mains & artisan desserts.</p>
+        <!-- Services grid -->
+        <section id="paths" class="py-16 bg-canvas">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-semibold text-center mb-12">Where we shine</h2>
+                <div class="grid gap-10 md:grid-cols-3">
+                <div class="bg-white rounded-2xl overflow-hidden card-shadow">
+                        <div class="aspect-square overflow-hidden">
+                            <img src="images/private-party-02.jpg" alt="Private dining" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <a class="arrow-link" href="#contact">
+                                <span>Private dining</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33 10">
+                                    <path fill="#B14C4C"
+                                        d="m32.265 5.265-4.5 4.5a.375.375 0 0 1-.53-.53l3.86-3.86H1a.375.375 0 0 1 0-.75h30.094L27.235.765a.375.375 0 0 1 .53-.53l4.5 4.5a.375.375 0 0 1 0 .53" />
+                                </svg>
+                            </a>
+                        </div>
                     </div>
-                </div>
-                <!-- Weddings & Parties -->
-                <div class="fade-scroll rounded-xl shadow-md overflow-hidden hover:shadow-xl transition">
-                    <img src="images/wedding-catering-01.jpg" alt="Wedding catering" class="w-full h-48 object-cover" />
-                    <div class="p-8 text-center">
-                        <h3 class="text-xl font-semibold mb-2">Weddings & Parties</h3>
-                        <p class="text-gray-600">Show‑stopping feasts tailored to your theme—from elegant canapés to late‑night bites, we handle every delicious detail.</p>
+                    <div class="bg-white rounded-2xl overflow-hidden card-shadow">
+                        <div class="aspect-square overflow-hidden">
+                            <img src="images/corporate-event-02.jpg" alt="At work" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <a class="arrow-link" href="#contact">
+                                <span>At work</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33 10">
+                                    <path fill="#B14C4C"
+                                        d="m32.265 5.265-4.5 4.5a.375.375 0 0 1-.53-.53l3.86-3.86H1a.375.375 0 0 1 0-.75h30.094L27.235.765a.375.375 0 0 1 .53-.53l4.5 4.5a.375.375 0 0 1 0 .53" />
+                                </svg>
+                            </a>
+                        </div>
                     </div>
-                </div>
-                <!-- Private Chef Experiences -->
-                <div class="fade-scroll rounded-xl shadow-md overflow-hidden hover:shadow-xl transition">
-                    <img src="images/chef-action-01.jpg" alt="Private chef" class="w-full h-48 object-cover" />
-                    <div class="p-8 text-center">
-                        <h3 class="text-xl font-semibold mb-2">Private Chef Experiences</h3>
-                        <p class="text-gray-600">Your own chef for the night: bespoke multi‑course tasting menus, wine pairings & live cooking theatrics right in your kitchen.</p>
+                    <div class="bg-white rounded-2xl overflow-hidden card-shadow">
+                        <div class="aspect-square overflow-hidden">
+                            <img src="images/event-highlights-02.jpg" alt="Events" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <a class="arrow-link" href="#contact">
+                                <span>Events</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33 10">
+                                    <path fill="#B14C4C"
+                                        d="m32.265 5.265-4.5 4.5a.375.375 0 0 1-.53-.53l3.86-3.86H1a.375.375 0 0 1 0-.75h30.094L27.235.765a.375.375 0 0 1 .53-.53l4.5 4.5a.375.375 0 0 1 0 .53" />
+                                </svg>
+                            </a>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- How It Works -->
-    <section id="how" class="py-20 bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-semibold text-center mb-12">How It Works</h2>
-            <div class="grid gap-8 md:grid-cols-3">
-                <div class="fade-scroll flex flex-col items-center text-center space-y-4">
-                    <img src="images/inquiry.png" alt="Inquiry" class="w-full h-56 object-cover rounded-xl shadow-md" />
-                    <h3 class="text-xl font-semibold">Inquiry</h3>
-                    <p class="text-gray-600">Share the occasion, preferred date, guest count, location, dietary needs,
-                        and any special theme—our team replies with a tailored proposal within 24 hours.</p>
-                </div>
-                <div class="fade-scroll flex flex-col items-center text-center space-y-4">
-                    <img src="images/hero.jpg" alt="Menu customization"
-                        class="w-full h-56 object-cover rounded-xl shadow-md" />
-                    <h3 class="text-xl font-semibold">Menu Customization</h3>
-                    <p class="text-gray-600">Collaborate with our executive chef in a tasting session or virtual call.
-                        We’ll refine dishes around seasonality, spice level, budget, and presentation style until every
-                        bite is spot‑on.</p>
-                </div>
-                <div class="fade-scroll flex flex-col items-center text-center space-y-4">
-                    <img src="images/gallery-12.jpg" alt="Event day"
-                        class="w-full h-56 object-cover rounded-xl shadow-md" />
-                    <h3 class="text-xl font-semibold">Event Day</h3>
-                    <p class="text-gray-600">On your big day our crew arrives early, sets up kitchen stations and décor,
-                        cooks everything fresh on‑site, serves guests with warm Kenyan hospitality, and leaves the venue
-                        spotless.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Signature Menus -->
-    <section id="menus" class="py-20 bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-semibold text-center mb-16">Signature Menus</h2>
-            <div class="grid gap-8 md:grid-cols-3">
-                <!-- Menu card -->
-                <div class="fade-scroll rounded-xl shadow-md overflow-hidden hover:shadow-lg transition">
-                    <img src="images/cuisine-dish-01.jpg" alt="Classic menu" class="w-full h-40 object-cover" />
-                    <div class="p-8">
-                        <h3 class="text-xl font-semibold mb-2">Classic</h3>
-                        <p class="text-primary font-semibold mb-4">KSh 3,000&nbsp;<span
-                                class="text-sm font-normal text-gray-600">per person</span></p>
-                        <ul class="space-y-1 text-gray-600 list-disc list-inside">
-                            <li>Seasonal bruschetta</li>
-                            <li>Stuffed chicken breast</li>
-                            <li>Herb‑crusted salmon</li>
-                        </ul>
+                    <div class="bg-white rounded-2xl overflow-hidden card-shadow">
+                        <div class="aspect-square overflow-hidden">
+                            <img src="images/dessert-display-02.jpg" alt="Cakes" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <a class="arrow-link" href="#contact">
+                                <span>Cakes</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33 10">
+                                    <path fill="#B14C4C"
+                                        d="m32.265 5.265-4.5 4.5a.375.375 0 0 1-.53-.53l3.86-3.86H1a.375.375 0 0 1 0-.75h30.094L27.235.765a.375.375 0 0 1 .53-.53l4.5 4.5a.375.375 0 0 1 0 .53" />
+                                </svg>
+                            </a>
+                        </div>
                     </div>
-                </div>
-                <!-- Menu card -->
-                <div class="fade-scroll rounded-xl shadow-md overflow-hidden hover:shadow-lg transition">
-                    <img src="images/cuisine-dish-02.jpg" alt="Premium menu" class="w-full h-40 object-cover" />
-                    <div class="p-8">
-                        <h3 class="text-xl font-semibold mb-2">Premium</h3>
-                        <p class="text-primary font-semibold mb-4">KSh 4,500&nbsp;<span
-                                class="text-sm font-normal text-gray-600">per person</span></p>
-                        <ul class="space-y-1 text-gray-600 list-disc list-inside">
-                            <li>Artisan cheese board</li>
-                            <li>Beef tenderloin</li>
-                            <li>Lobster risotto</li>
-                        </ul>
+                    <div class="bg-white rounded-2xl overflow-hidden card-shadow">
+                        <div class="aspect-square overflow-hidden">
+                            <img src="images/event-setup-02.jpg" alt="Partner venues" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <a class="arrow-link" href="#contact">
+                                <span>Partner venues</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33 10">
+                                    <path fill="#B14C4C"
+                                        d="m32.265 5.265-4.5 4.5a.375.375 0 0 1-.53-.53l3.86-3.86H1a.375.375 0 0 1 0-.75h30.094L27.235.765a.375.375 0 0 1 .53-.53l4.5 4.5a.375.375 0 0 1 0 .53" />
+                                </svg>
+                            </a>
+                        </div>
                     </div>
-                </div>
-                <!-- Menu card -->
-                <div class="fade-scroll rounded-xl shadow-md overflow-hidden hover:shadow-lg transition">
-                    <img src="images/cuisine-dish-03.jpg" alt="Chef's Table menu" class="w-full h-40 object-cover" />
-                    <div class="p-8">
-                        <h3 class="text-xl font-semibold mb-2">Chef's Table</h3>
-                        <p class="text-primary font-semibold mb-4">KSh 7,500&nbsp;<span
-                                class="text-sm font-normal text-gray-600">per person</span></p>
-                        <ul class="space-y-1 text-gray-600 list-disc list-inside">
-                            <li>Seared scallops</li>
-                            <li>Rack of lamb</li>
-                            <li>Truffle mushroom risotto</li>
-                        </ul>
+                    <div class="bg-white rounded-2xl overflow-hidden card-shadow">
+                        <div class="aspect-square overflow-hidden">
+                            <img src="images/wedding-catering-02.jpg" alt="Weddings" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <a class="arrow-link" href="#contact">
+                                <span>Weddings</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33 10">
+                                    <path fill="#B14C4C"
+                                        d="m32.265 5.265-4.5 4.5a.375.375 0 0 1-.53-.53l3.86-3.86H1a.375.375 0 0 1 0-.75h30.094L27.235.765a.375.375 0 0 1 .53-.53l4.5 4.5a.375.375 0 0 1 0 .53" />
+                                </svg>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-
-    <!-- ABOUT US  ──────────────────────────────────────────── -->
-    <section id="about" class="py-20 bg-white">
-        <div class="container mx-auto px-4 flex flex-col-reverse md:flex-row items-center gap-16">
-
-            <!-- Text column -->
-            <div class="w-full md:w-1/2 space-y-6">
-                <h2 class="text-3xl md:text-4xl font-semibold fade-scroll">Our Story</h2>
-
-                <p class="fade-scroll text-gray-700">
-                    KOMÈ began as a humble start-up in the heart of Ngara, yet from day
-                    one our kitchen was built state-of-the-art—outfitted to extract the very
-                    best from every ingredient. We believe that when cutting-edge technique
-                    meets genuine care, even the simplest dish can feel extraordinary.
-                </p>
-
-                <p class="fade-scroll text-gray-700">
-                    Today our team is bigger, but the mission is still the same: craft honest
-                    meals that feel like home while giving every guest a memorable experience.
-                    Whether it’s a backyard birthday or a 500-seat gala, we season each plate
-                    with the passion that sparked our earliest cook-outs—ensuring quality,
-                    warmth, and a little bit of Ngara pride in every bite.
-                </p>
-
-            </div>
-
-            <!-- Carousel column -->
-            <div class="w-full md:w-1/2 relative fade-scroll">
-
-                <!-- Slides -->
-                <div class="overflow-hidden rounded-xl shadow-lg">
-                    <div class="about-slide">
-                        <img src="images/about-1.jpg" class="w-full h-72 object-cover" alt="Kitchen prep">
-                    </div>
-                    <div class="about-slide hidden">
-                        <img src="images/about-2.jpg" class="w-full h-72 object-cover" alt="Family tasting session">
-                    </div>
-                    <div class="about-slide hidden">
-                        <img src="images/about-3.jpg" class="w-full h-72 object-cover" alt="Outdoor catering setup">
-                    </div>
+        <!-- Story + contact -->
+        <section id="story" class="py-20 bg-white">
+            <div class="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-start">
+                <div class="space-y-6">
+                    <p class="text-xs smallcaps text-primary-dark">Ngara, Nairobi</p>
+                    <h2 class="text-3xl md:text-4xl font-semibold">Abundance, calm service, and a kitchen that travels</h2>
+                    <p class="text-gray-700 text-lg">Our catering grew out of a creative block in Ngara. We plan menus that feel generous yet balanced—seasonal salads, bright mains, considered desserts—and we cook on-site so everything arrives lively and fresh.</p>
+                    <p class="text-gray-700 text-lg">Need staff, bar, rentals, or florals? We can assemble the team, present the food beautifully, and leave the venue spotless. Tell us what you have in mind; we’ll make it easy.</p>
+                    <a class="arrow-link" href="#contact">
+                        <span>Talk to our catering manager</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33 10">
+                            <path fill="#B14C4C"
+                                d="m32.265 5.265-4.5 4.5a.375.375 0 0 1-.53-.53l3.86-3.86H1a.375.375 0 0 1 0-.75h30.094L27.235.765a.375.375 0 0 1 .53-.53l4.5 4.5a.375.375 0 0 1 0 .53" />
+                        </svg>
+                    </a>
                 </div>
 
-                <!-- Controls -->
-                <button id="aboutPrev" class="absolute top-1/2 -translate-y-1/2 left-4 bg-white/70 p-2 rounded-full backdrop-blur-sm
-                     hover:bg-white shadow">
-                    <!-- heroicons: chevron-left -->
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                <div id="contact" class="bg-white rounded-2xl p-8 card-shadow">
+                    <h3 class="text-2xl font-semibold mb-6">Tell us about your event</h3>
+                    <form class="space-y-5">
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block mb-2 font-medium">Name</label>
+                                <input type="text" class="w-full border border-gray-200 rounded-md px-3 py-2 focus:ring-primary focus:border-primary" placeholder="Your name" required>
+                            </div>
+                            <div>
+                                <label class="block mb-2 font-medium">Email</label>
+                                <input type="email" class="w-full border border-gray-200 rounded-md px-3 py-2 focus:ring-primary focus:border-primary" placeholder="you@example.com" required>
+                            </div>
+                            <div>
+                                <label class="block mb-2 font-medium">Phone</label>
+                                <input type="tel" class="w-full border border-gray-200 rounded-md px-3 py-2 focus:ring-primary focus:border-primary" placeholder="0712 345 678">
+                            </div>
+                            <div>
+                                <label class="block mb-2 font-medium">Event type</label>
+                                <input type="text" class="w-full border border-gray-200 rounded-md px-3 py-2 focus:ring-primary focus:border-primary" placeholder="Wedding, corporate lunch, tasting">
+                            </div>
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block mb-2 font-medium">Date</label>
+                                <input type="date" class="w-full border border-gray-200 rounded-md px-3 py-2 focus:ring-primary focus:border-primary">
+                            </div>
+                            <div>
+                                <label class="block mb-2 font-medium">Guests</label>
+                                <input type="number" class="w-full border border-gray-200 rounded-md px-3 py-2 focus:ring-primary focus:border-primary" placeholder="e.g. 150">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block mb-2 font-medium">Notes</label>
+                            <textarea rows="4" class="w-full border border-gray-200 rounded-md px-3 py-2 focus:ring-primary focus:border-primary" placeholder="Dietary needs, service style, rentals, timings"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-primary text-white py-3 rounded-md font-semibold hover:bg-primary-dark transition">Send enquiry</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" class="py-20 bg-white">
+            <div class="container mx-auto px-4 max-w-4xl space-y-8">
+                <div class="space-y-3">
+                    <p class="text-xs smallcaps text-primary-dark">FAQs</p>
+                    <h2 class="text-3xl md:text-4xl font-semibold">Have some questions? We have answers.</h2>
+                </div>
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-lg font-semibold text-primary">Do you cater outside Nairobi?</h3>
+                        <p class="text-gray-700">We focus on Nairobi and nearby counties, but can travel further for larger events. Share your venue and we’ll confirm logistics.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-primary">What group sizes can you handle?</h3>
+                        <p class="text-gray-700">Anything from chef-at-home dinners for 8 to multi-course galas for 500. We scale the team, service style, and kitchen kit to fit.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-primary">Can you accommodate dietary needs?</h3>
+                        <p class="text-gray-700">Yes. We regularly design menus around gluten-free, vegan, halal, and allergy-friendly requirements—just share the details 48 hours ahead.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-primary">Do you provide staff, bar, or rentals?</h3>
+                        <p class="text-gray-700">We can staff the entire service (chefs, servers, bartenders) and arrange glassware, crockery, cutlery, and bar packages to match your event.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-primary">How soon can you respond?</h3>
+                        <p class="text-gray-700">We aim to reply within 24 hours with a tailored proposal. For urgent events, call us and we’ll prioritise a same-day response.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-canvas py-12">
+        <div class="container mx-auto px-4 grid md:grid-cols-3 gap-10 items-start">
+            <div class="space-y-2">
+                <div class="kome-brand text-primary">KOMÈ Catering</div>
+                <p class="text-gray-700">Ngara, Nairobi</p>
+                <p class="text-gray-700">(+254) 712 345 678</p>
+                <p class="text-gray-700">hello@ngaracooks.co.ke</p>
+            </div>
+            <div class="space-y-3">
+                <h4 class="font-semibold">Experience KOMÈ</h4>
+                <a class="arrow-link" href="#contact">
+                    <span>Book a tasting</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33 10">
+                        <path fill="#B14C4C"
+                            d="m32.265 5.265-4.5 4.5a.375.375 0 0 1-.53-.53l3.86-3.86H1a.375.375 0 0 1 0-.75h30.094L27.235.765a.375.375 0 0 1 .53-.53l4.5 4.5a.375.375 0 0 1 0 .53" />
                     </svg>
-                </button>
-                <button id="aboutNext" class="absolute top-1/2 -translate-y-1/2 right-4 bg-white/70 p-2 rounded-full backdrop-blur-sm
-                     hover:bg-white shadow">
-                    <!-- heroicons: chevron-right -->
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Gallery -->
-    <!-- Gallery -->
-    <section id="gallery" class="py-20 bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-semibold text-center mb-16">Gallery</h2>
-            <div class="grid gap-4 md:grid-cols-3">
-                <!-- Each image has the class 'gallery-item' so JS can bind click events -->
-                <img src="images/gallery-1.jpg" alt="Gallery image 1"
-                    class="fade-scroll gallery-item rounded-xl shadow-md hover:shadow-lg transition object-cover h-64 w-full cursor-pointer" />
-                <img src="images/gallery-2.jpg" alt="Gallery image 2"
-                    class="fade-scroll gallery-item rounded-xl shadow-md hover:shadow-lg transition object-cover h-64 w-full cursor-pointer" />
-                <img src="images/gallery-3.jpg" alt="Gallery image 3"
-                    class="fade-scroll gallery-item rounded-xl shadow-md hover:shadow-lg transition object-cover h-64 w-full cursor-pointer" />
-                <img src="images/gallery-4.jpg" alt="Gallery image 4"
-                    class="fade-scroll gallery-item rounded-xl shadow-md hover:shadow-lg transition object-cover h-64 w-full cursor-pointer" />
-                <img src="images/gallery-5.jpg" alt="Gallery image 5"
-                    class="fade-scroll gallery-item rounded-xl shadow-md hover:shadow-lg transition object-cover h-64 w-full cursor-pointer" />
-                <img src="images/gallery-6.jpg" alt="Gallery image 6"
-                    class="fade-scroll gallery-item rounded-xl shadow-md hover:shadow-lg transition object-cover h-64 w-full cursor-pointer" />
-                <img src="images/gallery-7.jpg" alt="Gallery image 7"
-                    class="fade-scroll gallery-item rounded-xl shadow-md hover:shadow-lg transition object-cover h-64 w-full cursor-pointer" />
-                <img src="images/gallery-8.jpg" alt="Gallery image 8"
-                    class="fade-scroll gallery-item rounded-xl shadow-md hover:shadow-lg transition object-cover h-64 w-full cursor-pointer" />
-                <img src="images/gallery-9.jpg" alt="Gallery image 9"
-                    class="fade-scroll gallery-item rounded-xl shadow-md hover:shadow-lg transition object-cover h-64 w-full cursor-pointer" />
-                <img src="images/gallery-10.jpg" alt="Gallery image 10"
-                    class="fade-scroll gallery-item rounded-xl shadow-md hover:shadow-lg transition object-cover h-64 w-full cursor-pointer" />
-                <img src="images/gallery-11.jpg" alt="Gallery image 11"
-                    class="fade-scroll gallery-item rounded-xl shadow-md hover:shadow-lg transition object-cover h-64 w-full cursor-pointer" />
-                <img src="images/gallery-12.jpg" alt="Gallery image 12"
-                    class="fade-scroll gallery-item rounded-xl shadow-md hover:shadow-lg transition object-cover h-64 w-full cursor-pointer" />
-            </div>
-        </div>
-    </section>
-
-    <!-- Lightbox modal for gallery -->
-    <div id="lightbox" class="fixed inset-0 bg-black/80 flex items-center justify-center z-50 hidden p-4">
-        <button id="lightboxClose"
-            class="absolute top-4 right-4 text-white text-3xl leading-none focus:outline-none">&times;</button>&times;</button>
-        <img id="lightboxImg" class="max-h-[80vh] max-w-[90vw] object-contain rounded-lg shadow-lg" src=""
-            alt="Lightbox image">
-    </div>
-
-
-    <!-- Our Culinary Philosophy Section -->
-    <section class="py-20 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-semibold text-center mb-16">Our Culinary Philosophy</h2>
-            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4 mb-12">
-                <!-- Philosophy card 1 -->
-                <div class="fade-scroll text-center">
-                    <img src="images/culinary-detail-01.jpg" alt="Fresh ingredients" class="w-full h-48 object-cover rounded-lg mb-4 shadow-md" />
-                    <h3 class="text-lg font-semibold mb-2">Fresh Ingredients</h3>
-                    <p class="text-gray-600 text-sm">Sourced locally whenever possible, our ingredients are hand-picked for quality and seasonality.</p>
-                </div>
-                <!-- Philosophy card 2 -->
-                <div class="fade-scroll text-center">
-                    <img src="images/gourmet-plating-01.jpg" alt="Thoughtful plating" class="w-full h-48 object-cover rounded-lg mb-4 shadow-md" />
-                    <h3 class="text-lg font-semibold mb-2">Thoughtful Plating</h3>
-                    <p class="text-gray-600 text-sm">Every plate is an edible canvas—we believe presentation elevates the dining experience.</p>
-                </div>
-                <!-- Philosophy card 3 -->
-                <div class="fade-scroll text-center">
-                    <img src="images/chef-presentation-01.jpg" alt="Passionate cooking" class="w-full h-48 object-cover rounded-lg mb-4 shadow-md" />
-                    <h3 class="text-lg font-semibold mb-2">Passionate Cooking</h3>
-                    <p class="text-gray-600 text-sm">Our chefs infuse genuine care and skill into every dish—quality cannot be rushed.</p>
-                </div>
-                <!-- Philosophy card 4 -->
-                <div class="fade-scroll text-center">
-                    <img src="images/team-service-01.jpg" alt="Warm hospitality" class="w-full h-48 object-cover rounded-lg mb-4 shadow-md" />
-                    <h3 class="text-lg font-semibold mb-2">Warm Hospitality</h3>
-                    <p class="text-gray-600 text-sm">Service with warmth is at the heart of everything we do. Your guests matter to us.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section class="py-20 bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-semibold text-center mb-12">Testimonials</h2>
-
-            <!-- Two-column grid on desktop, stacked on mobile -->
-            <div class="max-w-3xl mx-auto space-y-12 md:grid md:grid-cols-2 md:gap-8 md:space-y-0">
-
-                <blockquote class="fade-scroll relative bg-gray-100 p-8 rounded-xl shadow">
-                    <svg class="absolute -top-3 -left-3 h-8 w-8 text-primary" fill="currentColor" viewBox="0 0 24 24">
-                        <path
-                            d="M7.17 6A4.001 4.001 0 003 10v2a4 4 0 004 4h1a1 1 0 100-2H7a2 2 0 01-2-2v-2a2 2 0 012-2h.17A3 3 0 0010 13v-3a4 4 0 00-2.83-3.8zM17.17 6A4.001 4.001 0 0013 10v2a4 4 0 004 4h1a1 1 0 100-2h-1a2 2 0 01-2-2v-2a2 2 0 012-2h.17A3 3 0 0020 13v-3a4 4 0 00-2.83-3.8z" />
+                </a>
+                <a class="arrow-link" href="#paths">
+                    <span>Explore services</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33 10">
+                        <path fill="#B14C4C"
+                            d="m32.265 5.265-4.5 4.5a.375.375 0 0 1-.53-.53l3.86-3.86H1a.375.375 0 0 1 0-.75h30.094L27.235.765a.375.375 0 0 1 .53-.53l4.5 4.5a.375.375 0 0 1 0 .53" />
                     </svg>
-                    <p class="text-gray-700 italic">
-                        "KOMÈ made our wedding reception unforgettable—the menu was
-                        beyond delicious and the service impeccable.”
-                    </p>
-                    <footer class="mt-4 text-sm font-semibold">— Aisha & Kim, Wedding</footer>
-                </blockquote>
-
-                <blockquote class="fade-scroll relative bg-gray-100 p-8 rounded-xl shadow">
-                    <svg class="absolute -top-3 -left-3 h-8 w-8 text-primary" fill="currentColor" viewBox="0 0 24 24">
-                        <path
-                            d="M7.17 6A4.001 4.001 0 003 10v2a4 4 0 004 4h1a1 1 0 100-2H7a2 2 0 01-2-2v-2a2 2 0 012-2h.17A3 3 0 0010 13v-3a4 4 0 00-2.83-3.8zM17.17 6A4.001 4.001 0 0013 10v2a4 4 0 004 4h1a1 1 0 100-2h-1a2 2 0 01-2-2v-2a2 2 0 012-2h.17A3 3 0 0020 13v-3a4 4 0 00-2.83-3.8z" />
-                    </svg>
-                    <p class="text-gray-700 italic">
-                        “Their corporate lunch setup impressed our clients and kept our team
-                        energized—highly recommend!”
-                    </p>
-                    <footer class="mt-4 text-sm font-semibold">— David, Tech Co. CEO</footer>
-                </blockquote>
-
-                <blockquote class="fade-scroll relative bg-gray-100 p-8 rounded-xl shadow">
-                    <svg class="absolute -top-3 -left-3 h-8 w-8 text-primary" fill="currentColor" viewBox="0 0 24 24">
-                        <path
-                            d="M7.17 6A4.001 4.001 0 003 10v2a4 4 0 004 4h1a1 1 0 100-2H7a2 2 0 01-2-2v-2a2 2 0 012-2h.17A3 3 0 0010 13v-3a4 4 0 00-2.83-3.8zM17.17 6A4.001 4.001 0 0013 10v2a4 4 0 004 4h1a1 1 0 100-2h-1a2 2 0 01-2-2v-2a2 2 0 012-2h.17A3 3 0 0020 13v-3a4 4 0 00-2.83-3.8z" />
-                    </svg>
-                    <p class="text-gray-700 italic">
-                        "KOMÈ exceeded our expectations for my mum's 60th birthday.
-                        Every plate was a work of art!”
-                    </p>
-                    <footer class="mt-4 text-sm font-semibold">— Mary, Private Party</footer>
-                </blockquote>
-
-                <blockquote class="fade-scroll relative bg-gray-100 p-8 rounded-xl shadow">
-                    <svg class="absolute -top-3 -left-3 h-8 w-8 text-primary" fill="currentColor" viewBox="0 0 24 24">
-                        <path
-                            d="M7.17 6A4.001 4.001 0 003 10v2a4 4 0 004 4h1a1 1 0 100-2H7a2 2 0 01-2-2v-2a2 2 0 012-2h.17A3 3 0 0010 13v-3a4 4 0 00-2.83-3.8zM17.17 6A4.001 4.001 0 0013 10v2a4 4 0 004 4h1a1 1 0 100-2h-1a2 2 0 01-2-2v-2a2 2 0 012-2h.17A3 3 0 0020 13v-3a4 4 0 00-2.83-3.8z" />
-                    </svg>
-                    <p class="text-gray-700 italic">
-                        “We relied on Ngara Cooks for our NGO fundraiser: flawless vegan menu,
-                        charming staff, and zero stress.”
-                    </p>
-                    <footer class="mt-4 text-sm font-semibold">— Samuel, Event Co-ordinator</footer>
-                </blockquote>
-
+                </a>
+            </div>
+            <div class="space-y-3">
+                <h4 class="font-semibold">Follow</h4>
+                <div class="flex space-x-4 text-gray-600">
+                    <a href="#" class="hover:text-primary">Instagram</a>
+                    <a href="#" class="hover:text-primary">Facebook</a>
+                </div>
             </div>
         </div>
-    </section>
-
-
-    <!-- CTA Banner -->
-    <section class="relative bg-gradient-to-r from-primary-light to-primary text-white py-16 text-center">
-        <h2 class="fade-scroll text-3xl md:text-4xl font-semibold mb-6">Let’s make your event delicious</h2>
-        <a href="#quote"
-            class="fade-scroll inline-block bg-white text-primary px-8 py-4 rounded-full font-semibold shadow hover:bg-gray-50 transition">Request
-            a Quote</a>
-    </section>
-
-    <!-- Quote / Contact Section -->
-    <section id="quote" class="py-20 bg-gray-50">
-        <div class="container mx-auto px-4 max-w-2xl">
-            <h2 class="text-3xl font-semibold text-center mb-8">Request a Quote</h2>
-            <form action="#" method="POST" class="space-y-6 bg-white p-8 rounded-xl shadow">
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div class="fade-scroll">
-                        <label class="block mb-2 font-medium">Name</label>
-                        <input type="text"
-                            class="w-full border-gray-300 rounded-md focus:ring-primary focus:border-primary"
-                            placeholder="Your name" required />
-                    </div>
-                    <div class="fade-scroll">
-                        <label class="block mb-2 font-medium">Email</label>
-                        <input type="email"
-                            class="w-full border-gray-300 rounded-md focus:ring-primary focus:border-primary"
-                            placeholder="you@example.com" required />
-                    </div>
-                    <div class="fade-scroll">
-                        <label class="block mb-2 font-medium">Phone</label>
-                        <input type="tel"
-                            class="w-full border-gray-300 rounded-md focus:ring-primary focus:border-primary"
-                            placeholder="0712 345 678" />
-                    </div>
-                    <div class="fade-scroll">
-                        <label class="block mb-2 font-medium">Event Date</label>
-                        <input type="date"
-                            class="w-full border-gray-300 rounded-md focus:ring-primary focus:border-primary" />
-                    </div>
-                </div>
-                <div class="fade-scroll">
-                    <label class="block mb-2 font-medium">Guest Count</label>
-                    <input type="number"
-                        class="w-full border-gray-300 rounded-md focus:ring-primary focus:border-primary"
-                        placeholder="e.g. 120" />
-                </div>
-                <div class="fade-scroll">
-                    <label class="block mb-2 font-medium">Message / Requirements</label>
-                    <textarea rows="4" class="w-full border-gray-300 rounded-md focus:ring-primary focus:border-primary"
-                        placeholder="Tell us about your event"></textarea>
-                </div>
-                <button type="submit"
-                    class="fade-scroll bg-primary text-white px-3 py-3 rounded-full font-semibold hover:bg-primary-light transition">Send
-                    Request</button>
-            </form>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer id="contact" class="bg-white py-10 border-t">
-        <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between space-y-6 md:space-y-0">
-            <div>
-                <h3 class="text-xl font-semibold mb-2"><span class="kome-brand">KOMÈ</span> Catering</h3>
-                <p class="text-gray-600">Ngara, Nairobi, Kenya</p>
-                <p class="text-gray-600">(+254) 712 345 678</p>
-                <p class="text-gray-600">hello@ngaracooks.co.ke</p>
-            </div>
-            <div>
-                <h4 class="font-semibold mb-2">Quick Links</h4>
-                <ul class="space-y-1 text-sm text-gray-600">
-                    <li><a href="#services" class="hover:text-primary">Services</a></li>
-                    <li><a href="#menus" class="hover:text-primary">Menus</a></li>
-                    <li><a href="#gallery" class="hover:text-primary">Gallery</a></li>
-                    <li><a href="#quote" class="hover:text-primary">Quote</a></li>
-                </ul>
-            </div>
-            <div class="flex space-x-4">
-                <a href="#" class="text-gray-500 hover:text-primary"><svg xmlns="http://www.w3.org/2000/svg"
-                        class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                        <path
-                            d="M12 2.04c-5.52 0-10 4.48-10 10 0 4.41 2.85 8.15 6.85 9.49.5.09.68-.22.68-.49 0-.24-.01-.87-.01-1.71-2.79.61-3.37-1.34-3.37-1.34-.45-1.15-1.1-1.46-1.1-1.46-.9-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.9.83.09-.65.35-1.08.63-1.32-2.22-.25-4.56-1.11-4.56-4.95 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.28.1-2.67 0 0 .84-.27 2.75 1.02a9.58 9.58 0 012.5-.34c.85 0 1.7.11 2.5.34 1.9-1.29 2.74-1.02 2.74-1.02.57 1.39.22 2.42.11 2.67.64.7 1.03 1.59 1.03 2.68 0 3.85-2.34 4.69-4.57 4.94.36.31.68.92.68 1.85 0 1.33-.01 2.4-.01 2.73 0 .27.18.59.69.49A10.01 10.01 0 0022 12c0-5.52-4.48-9.96-10-9.96z" />
-                    </svg></a>
-                <a href="#" class="text-gray-500 hover:text-primary"><svg xmlns="http://www.w3.org/2000/svg"
-                        class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                        <path
-                            d="M22.23 5.924c-.793.35-1.644.586-2.538.69a4.49 4.49 0 001.982-2.48 8.847 8.847 0 01-2.826 1.082 4.487 4.487 0 00-7.673 4.092 12.744 12.744 0 01-9.261-4.697 4.48 4.48 0 001.39 5.983A4.401 4.401 0 01.88 10.96v.056a4.486 4.486 0 003.596 4.398 4.5 4.5 0 01-2.022.077 4.487 4.487 0 004.191 3.114A8.998 8.998 0 010 19.54a12.697 12.697 0 006.88 2.018c8.256 0 12.784-6.84 12.784-12.784 0-.195-.004-.39-.013-.583a9.128 9.128 0 002.242-2.322z" />
-                    </svg></a>
-            </div>
-        </div>
-        <div class="mt-6 text-center text-sm text-gray-400">© 2025 <span class="kome-brand text-base">KOMÈ</span> Catering. All rights reserved.</div>
+        <div class="mt-8 text-center text-sm text-gray-500">© 2025 <span class="kome-brand text-base">KOMÈ</span> Catering. All rights reserved.</div>
     </footer>
 
-    <!-- Simple mobile menu script -->
     <script>
-        // Mobile menu
         const menuBtn = document.getElementById('menuBtn');
         const mobileMenu = document.getElementById('mobileMenu');
 
         function toggleMenu() {
             mobileMenu.classList.toggle('hidden');
         }
+
         menuBtn.addEventListener('click', toggleMenu);
-        // Gallery lightbox
-        const galleryItems = document.querySelectorAll('.gallery-item');
-        const lightbox = document.getElementById('lightbox');
-        const lightboxImg = document.getElementById('lightboxImg');
-        const lightboxClose = document.getElementById('lightboxClose');
-
-        function openLightbox(src) {
-            lightboxImg.src = src;
-            lightbox.classList.remove('hidden');
-            document.body.classList.add('overflow-hidden');
-        }
-
-        function closeLightbox() {
-            lightbox.classList.add('hidden');
-            document.body.classList.remove('overflow-hidden');
-        }
-
-        galleryItems.forEach((img) => {
-            img.addEventListener('click', () => openLightbox(img.src));
-        });
-        lightboxClose.addEventListener('click', closeLightbox);
-        lightbox.addEventListener('click', (e) => {
-            if (e.target === lightbox) closeLightbox();
-        });
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') closeLightbox();
-        });
-        // ---------- hero staggered fade‑in ----------
-        document.addEventListener('DOMContentLoaded', () => {
-            const items = document.querySelectorAll('.hero-fade .fade-up');
-            items.forEach((el, idx) => {
-                setTimeout(() => el.classList.add('show'), idx * 200); // 200 ms stagger
-            });
-        });
-        // Reveal .fade-scroll elements when ~20 % of them enter the viewport
-        const observer = new IntersectionObserver(
-            (entries, obs) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('show');
-                        obs.unobserve(entry.target); // run once per element
-                    }
-                });
-            }, {
-                threshold: 0.2
-            }
-        );
-
-        // Attach observer to every element with the fade-scroll class
-        document.querySelectorAll('.fade-scroll').forEach(el => observer.observe(el));
-
-        // ─── About-carousel logic ────────────────────────────────────────────
-        const slides = document.querySelectorAll('.about-slide');
-        const prevBtn = document.getElementById('aboutPrev');
-        const nextBtn = document.getElementById('aboutNext');
-        let current = 0,
-            auto;
-
-        function showSlide(idx) {
-            // remove zoom class from current slide
-            slides[current].classList.add('hidden');
-            slides[current].classList.remove('animate-zoom');
-
-            // pick new slide
-            current = (idx + slides.length) % slides.length;
-            slides[current].classList.remove('hidden');
-
-            // add zoom class to restart animation
-            slides[current].classList.add('animate-zoom');
-        }
-
-        prevBtn.addEventListener('click', () => {
-            clearInterval(auto); // pause auto-play on manual action
-            showSlide(current - 1);
-        });
-        nextBtn.addEventListener('click', () => {
-            clearInterval(auto);
-            showSlide(current + 1);
-        });
-
-        // auto-play every 5 s
-        auto = setInterval(() => showSlide(current + 1), 5000);
     </script>
 </body>
 
