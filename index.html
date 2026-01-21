@@ -117,6 +117,24 @@
             height: 10px;
         }
 
+        .hero-link {
+            color: #fff;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .hero-link svg path {
+            transition: fill 0.3s ease;
+        }
+
+        .hero-link:hover {
+            color: #B14C4C;
+            transform: translateX(4px);
+        }
+
+        .hero-link:hover svg path {
+            fill: #B14C4C;
+        }
+
         .card-shadow {
             box-shadow: 0 18px 40px -18px rgba(0, 0, 0, 0.2);
         }
@@ -215,14 +233,14 @@
                         <h1 class="text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight"><span class="text-primary font-black text-5xl md:text-6xl lg:text-7xl">KOMÈ</span> brings the kitchen to you</h1>
                         <p class="text-lg text-white/85">Full-service catering across Nairobi—chef-led menus, calm execution, and abundant tables for intimate dinners or 500-guest galas.</p>
                         <div class="flex flex-col sm:flex-row gap-4">
-                            <a class="arrow-link text-white" href="#contact">
+                            <a class="arrow-link hero-link" href="#contact">
                                 <span>Plan your event</span>
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33 10">
                                     <path fill="#ffffff"
                                         d="m32.265 5.265-4.5 4.5a.375.375 0 0 1-.53-.53l3.86-3.86H1a.375.375 0 0 1 0-.75h30.094L27.235.765a.375.375 0 0 1 .53-.53l4.5 4.5a.375.375 0 0 1 0 .53" />
                                 </svg>
                             </a>
-                            <a class="arrow-link text-white" href="#paths">
+                            <a class="arrow-link hero-link" href="#paths">
                                 <span>See services</span>
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33 10">
                                     <path fill="#ffffff"
