@@ -132,6 +132,18 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* Hero slider */
+        .hero-slide {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            transition: opacity 0.8s ease-in-out;
+        }
+
+        .hero-slide.active {
+            opacity: 1;
+        }
     </style>
 </head>
 
@@ -168,35 +180,66 @@
     </header>
 
     <main id="top">
-        <!-- Hero -->
-        <section class="bg-white pt-28 pb-16 min-h-screen flex items-center">
-            <div class="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
-                <div class="space-y-6 reveal">
-                    <p class="text-xs smallcaps text-primary-dark">Catering</p>
-                    <h1 class="text-4xl md:text-5xl font-semibold leading-tight text-primary">KOMÈ</h1>
-                    <p class="text-lg text-gray-700">Whether you’re planning an intimate dinner or a 500-guest gala, we bring abundant salads, generous platters, and calm, attentive service—fresh from our Ngara kitchen to your table.</p>
-                    <div class="flex flex-col sm:flex-row gap-4">
-                        <a class="arrow-link" href="#contact">
-                            <span>Plan your event</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33 10">
-                                <path fill="#B14C4C"
-                                    d="m32.265 5.265-4.5 4.5a.375.375 0 0 1-.53-.53l3.86-3.86H1a.375.375 0 0 1 0-.75h30.094L27.235.765a.375.375 0 0 1 .53-.53l4.5 4.5a.375.375 0 0 1 0 .53" />
-                            </svg>
-                        </a>
-                        <a class="arrow-link" href="#faq">
-                            <span>View FAQs</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33 10">
-                                <path fill="#B14C4C"
-                                    d="m32.265 5.265-4.5 4.5a.375.375 0 0 1-.53-.53l3.86-3.86H1a.375.375 0 0 1 0-.75h30.094L27.235.765a.375.375 0 0 1 .53-.53l4.5 4.5a.375.375 0 0 1 0 .53" />
-                            </svg>
-                        </a>
+        <!-- Hero Slider -->
+        <section class="relative min-h-screen pt-20 text-white overflow-hidden">
+            <!-- Slides -->
+            <div class="absolute inset-0">
+                <div class="hero-slide active">
+                    <img src="images/gallery-hero-01.jpg" alt="Abundant KOMÈ catering spread" class="w-full h-full object-cover">
+                </div>
+                <div class="hero-slide">
+                    <img src="images/gallery-hero-02.jpg" alt="Chefs plating dishes" class="w-full h-full object-cover">
+                </div>
+                <div class="hero-slide">
+                    <img src="images/event-highlights-02.jpg" alt="Guests enjoying catering" class="w-full h-full object-cover">
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60"></div>
+            </div>
+
+            <div class="relative z-10 h-full flex items-center">
+                <div class="container mx-auto px-4 max-w-5xl">
+                    <div class="max-w-2xl space-y-6">
+                        <p class="text-xs smallcaps text-primary-light">Catering</p>
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight">KOMÈ brings the kitchen to you</h1>
+                        <p class="text-lg text-white/85">Full-service catering across Nairobi—chef-led menus, calm execution, and abundant tables for intimate dinners or 500-guest galas.</p>
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <a class="arrow-link text-white" href="#contact">
+                                <span>Plan your event</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33 10">
+                                    <path fill="#ffffff"
+                                        d="m32.265 5.265-4.5 4.5a.375.375 0 0 1-.53-.53l3.86-3.86H1a.375.375 0 0 1 0-.75h30.094L27.235.765a.375.375 0 0 1 .53-.53l4.5 4.5a.375.375 0 0 1 0 .53" />
+                                </svg>
+                            </a>
+                            <a class="arrow-link text-white" href="#paths">
+                                <span>See services</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33 10">
+                                    <path fill="#ffffff"
+                                        d="m32.265 5.265-4.5 4.5a.375.375 0 0 1-.53-.53l3.86-3.86H1a.375.375 0 0 1 0-.75h30.094L27.235.765a.375.375 0 0 1 .53-.53l4.5 4.5a.375.375 0 0 1 0 .53" />
+                                </svg>
+                            </a>
+                        </div>
                     </div>
                 </div>
-                <div class="overflow-hidden card-shadow reveal">
-                    <img src="images/gallery-hero-01.jpg" alt="Abundant KOMÈ catering spread"
-                        class="w-full h-[440px] object-cover">
+            </div>
+
+            <!-- Controls -->
+            <div class="absolute inset-x-0 bottom-10 flex items-center justify-center gap-6 z-10">
+                <div class="flex gap-3">
+                    <button class="hero-dot w-3 h-3 rounded-full bg-white/60 border border-white/40" aria-label="Slide 1"></button>
+                    <button class="hero-dot w-3 h-3 rounded-full bg-white/60 border border-white/40" aria-label="Slide 2"></button>
+                    <button class="hero-dot w-3 h-3 rounded-full bg-white/60 border border-white/40" aria-label="Slide 3"></button>
                 </div>
             </div>
+            <button class="hero-prev absolute left-6 top-1/2 -translate-y-1/2 z-10 p-3 bg-white/30 hover:bg-white/50 text-white rounded-full backdrop-blur" aria-label="Previous slide">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+            </button>
+            <button class="hero-next absolute right-6 top-1/2 -translate-y-1/2 z-10 p-3 bg-white/30 hover:bg-white/50 text-white rounded-full backdrop-blur" aria-label="Next slide">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+            </button>
         </section>
 
         <!-- Origin story slice -->
@@ -441,6 +484,50 @@
         }, { threshold: 0.15 });
 
         document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+        // Hero slider
+        const heroSlides = Array.from(document.querySelectorAll('.hero-slide'));
+        const heroDots = Array.from(document.querySelectorAll('.hero-dot'));
+        const prevBtn = document.querySelector('.hero-prev');
+        const nextBtn = document.querySelector('.hero-next');
+        let currentSlide = 0;
+        let timer;
+
+        function setSlide(idx) {
+            currentSlide = (idx + heroSlides.length) % heroSlides.length;
+            heroSlides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === currentSlide);
+            });
+            heroDots.forEach((dot, i) => {
+                dot.classList.toggle('bg-white', i === currentSlide);
+                dot.classList.toggle('bg-white/60', i !== currentSlide);
+            });
+        }
+
+        function startAuto() {
+            clearInterval(timer);
+            timer = setInterval(() => setSlide(currentSlide + 1), 5000);
+        }
+
+        heroDots.forEach((dot, i) => {
+            dot.addEventListener('click', () => {
+                setSlide(i);
+                startAuto();
+            });
+        });
+
+        prevBtn.addEventListener('click', () => {
+            setSlide(currentSlide - 1);
+            startAuto();
+        });
+
+        nextBtn.addEventListener('click', () => {
+            setSlide(currentSlide + 1);
+            startAuto();
+        });
+
+        setSlide(0);
+        startAuto();
     </script>
 </body>
 
