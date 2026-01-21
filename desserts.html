@@ -76,6 +76,17 @@
             color: #B14C4C;
             transform: translateX(4px);
         }
+
+        .hero-fade {
+            opacity: 0;
+            transition: opacity 1.2s ease, transform 1.2s ease;
+            transform: translateY(10px);
+        }
+
+        .hero-fade.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 </head>
 
@@ -95,8 +106,8 @@
                 <span>Back to home</span>
             </a>
         </div>
-        <section class="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
-            <div class="space-y-5 reveal">
+        <section class="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center hero-fade">
+            <div class="space-y-5">
                 <p class="text-xs smallcaps text-primary">Desserts</p>
                 <h1 class="text-4xl md:text-5xl font-semibold leading-tight">Sweet finishes, crafted with care</h1>
                 <p class="text-lg text-anchor/80">From citrus tarts to flourless chocolate cakes, our pastry team builds seasonal trays, minis, and showpieces that close the meal beautifully.</p>
@@ -235,6 +246,13 @@
         }, { threshold: 0.15 });
 
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Hero fade on load
+        window.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.hero-fade').forEach(el => {
+                requestAnimationFrame(() => el.classList.add('show'));
+            });
+        });
     </script>
 </body>
 
