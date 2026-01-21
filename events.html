@@ -56,6 +56,19 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        .footer-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            color: #2F4F4F;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: #B14C4C;
+            transform: translateX(4px);
+        }
     </style>
 </head>
 
@@ -171,21 +184,21 @@
     <footer class="bg-white border-t border-anchor/10">
         <div class="container mx-auto px-4 py-10 grid md:grid-cols-3 gap-8">
             <div class="space-y-2">
-                <div class="text-xl font-semibold text-primary">KOMÈ Catering</div>
+                <div class="text-xl font-semibold text-primary">KOMÈ Foods</div>
                 <p class="text-anchor/80">Ngara, Nairobi</p>
                 <p class="text-anchor/80">(+254) 712 345 678</p>
                 <p class="text-anchor/80">hello@ngaracooks.co.ke</p>
             </div>
             <div class="space-y-3">
                 <h4 class="font-semibold text-anchor">Plan with us</h4>
-                <a class="inline-flex items-center gap-2 text-primary font-semibold" href="index.html#contact">
+                <a class="footer-link" href="index.html#contact">
                     <span>Request a quote</span>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33 10" class="w-7 h-3">
                         <path fill="#B14C4C"
                             d="m32.265 5.265-4.5 4.5a.375.375 0 0 1-.53-.53l3.86-3.86H1a.375.375 0 0 1 0-.75h30.094L27.235.765a.375.375 0 0 1 .53-.53l4.5 4.5a.375.375 0 0 1 0 .53" />
                     </svg>
                 </a>
-                <a class="inline-flex items-center gap-2 text-primary font-semibold" href="index.html">
+                <a class="footer-link" href="index.html">
                     <span>Back to home</span>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33 10" class="w-7 h-3">
                         <path fill="#B14C4C"
@@ -196,8 +209,8 @@
             <div class="space-y-3">
                 <h4 class="font-semibold text-anchor">Follow</h4>
                 <div class="flex space-x-4 text-anchor/80">
-                    <a href="#" class="hover:text-primary">Instagram</a>
-                    <a href="#" class="hover:text-primary">Facebook</a>
+                    <a href="#" class="footer-link">Instagram</a>
+                    <a href="#" class="footer-link">Facebook</a>
                 </div>
             </div>
         </div>

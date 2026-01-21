@@ -139,6 +139,19 @@
             box-shadow: 0 18px 40px -18px rgba(0, 0, 0, 0.2);
         }
 
+        .footer-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            color: #2F4F4F;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: #B14C4C;
+            transform: translateX(4px);
+        }
+
         /* Scroll reveal */
         .reveal {
             opacity: 0;
@@ -453,21 +466,21 @@
     <footer class="bg-canvas py-12">
         <div class="container mx-auto px-4 grid md:grid-cols-3 gap-10 items-start">
             <div class="space-y-2">
-                <div class="kome-brand text-primary">KOMÈ Catering</div>
+                <div class="kome-brand text-primary">KOMÈ Foods</div>
                 <p class="text-gray-700">Ngara, Nairobi</p>
                 <p class="text-gray-700">(+254) 712 345 678</p>
                 <p class="text-gray-700">hello@ngaracooks.co.ke</p>
             </div>
             <div class="space-y-3">
                 <h4 class="font-semibold">Experience KOMÈ</h4>
-                <a class="arrow-link" href="#contact">
+                <a class="footer-link" href="#contact">
                     <span>Book a tasting</span>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33 10">
                         <path fill="#B14C4C"
                             d="m32.265 5.265-4.5 4.5a.375.375 0 0 1-.53-.53l3.86-3.86H1a.375.375 0 0 1 0-.75h30.094L27.235.765a.375.375 0 0 1 .53-.53l4.5 4.5a.375.375 0 0 1 0 .53" />
                     </svg>
                 </a>
-                <a class="arrow-link" href="#paths">
+                <a class="footer-link" href="#paths">
                     <span>Explore services</span>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33 10">
                         <path fill="#B14C4C"
@@ -478,12 +491,12 @@
             <div class="space-y-3">
                 <h4 class="font-semibold">Follow</h4>
                 <div class="flex space-x-4 text-gray-600">
-                    <a href="#" class="hover:text-primary">Instagram</a>
-                    <a href="#" class="hover:text-primary">Facebook</a>
+                    <a href="#" class="footer-link">Instagram</a>
+                    <a href="#" class="footer-link">Facebook</a>
                 </div>
             </div>
         </div>
-        <div class="mt-8 text-center text-sm text-gray-500">© 2025 <span class="kome-brand text-base">KOMÈ</span> Catering. All rights reserved.</div>
+        <div class="mt-8 text-center text-sm text-gray-500">© 2025 <span class="kome-brand text-base">KOMÈ</span> Foods. All rights reserved.</div>
     </footer>
 
     <script>
