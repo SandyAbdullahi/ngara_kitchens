@@ -175,6 +175,17 @@
         .hero-slide.active {
             opacity: 1;
         }
+
+        .showcase-slide {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            transition: opacity 0.8s ease-in-out;
+        }
+
+        .showcase-slide.active {
+            opacity: 1;
+        }
     </style>
 </head>
 
@@ -192,7 +203,6 @@
             <nav class="hidden md:flex space-x-8 text-sm font-medium">
                 <a href="#paths" class="hover:text-primary">Services</a>
                 <a href="#story" class="hover:text-primary">About</a>
-                <a href="#faq" class="hover:text-primary">FAQs</a>
                 <a href="#contact" class="hover:text-primary">Enquire</a>
             </nav>
             <button id="menuBtn" class="md:hidden">
@@ -205,14 +215,13 @@
         <div id="mobileMenu" class="hidden flex-col space-y-4 px-4 pb-4 md:hidden">
             <a href="#paths" class="block" onclick="toggleMenu()">Services</a>
             <a href="#story" class="block" onclick="toggleMenu()">About</a>
-            <a href="#faq" class="block" onclick="toggleMenu()">FAQs</a>
             <a href="#contact" class="block" onclick="toggleMenu()">Enquire</a>
         </div>
     </header>
 
     <main id="top">
                 <!-- Hero -->
-        <section class="bg-white pt-28 pb-16 min-h-screen flex items-center">
+        <section class="bg-white pt-28 pb-16 min-h-screen flex items-center border-b border-gray-200">
             <div class="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
                 <div class="space-y-6 reveal">
                     <p class="text-xs smallcaps text-primary-dark">Foods</p>
@@ -238,6 +247,20 @@
                 <div class="overflow-hidden card-shadow reveal">
                     <img src="images/gallery-hero-01.jpg" alt="Abundant KOMÈ catering spread"
                         class="w-full h-[440px] object-cover">
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Story -->
+        <section id="story" class="py-20 bg-white">
+            <div class="container mx-auto px-4 max-w-4xl text-center space-y-6">
+                <p class="text-xs smallcaps text-primary-dark">Our Story</p>
+                <h2 class="text-3xl md:text-4xl font-semibold reveal">The Story of KOMÉ</h2>
+                <p class="text-gray-700 text-lg reveal">Born in the heart of a quiet creative block in Ngara, KOMÉ is a culinary studio dedicated to the art of intentional dining. Our identity is defined by a contemporary spirit with a historical reverence.</p>
+                <p class="text-gray-700 text-lg reveal">We believe in intellectual honesty—meaning every ingredient has a purpose and every technique is earned. We take the "long way" because we believe the best flavors cannot be rushed. Whether it is our hand-strained yoghurt curds, our slow-simmered garlic-confit, or our heritage cuts of lamb, we honor traditional, time-intensive techniques to create a menu that is both rooted in history and reimagined for the contemporary table.</p>
+                <p class="text-gray-700 text-lg reveal">At KOMÉ, we don't just prepare food; we craft it.</p>
+                <div class="overflow-hidden shadow-lg bg-white max-w-3xl mx-auto reveal">
+                    <img src="images/catering-display-01.jpg" alt="KOMÈ team preparing catering spread" class="w-full h-[360px] object-cover">
                 </div>
             </div>
         </section>
@@ -296,8 +319,48 @@
                             </svg>
                         </a>
                     </div>
-
                 </div>
+            </div>
+        </section>
+
+        <!-- Showcase carousel -->
+        <section class="relative min-h-screen overflow-hidden bg-white">
+            <div class="absolute inset-0">
+                <div class="showcase-slide active">
+                    <img src="images/event-highlights-01.jpg" alt="Event highlights" class="w-full h-full object-cover">
+                </div>
+                <div class="showcase-slide">
+                    <img src="images/catering-display-02.jpg" alt="Catering display" class="w-full h-full object-cover">
+                </div>
+                <div class="showcase-slide">
+                    <img src="images/outdoor-catering-02.jpg" alt="Outdoor catering" class="w-full h-full object-cover">
+                </div>
+                <div class="showcase-slide">
+                    <img src="images/elegant-tablesetting-02.jpg" alt="Table setting" class="w-full h-full object-cover">
+                </div>
+                <div class="showcase-slide">
+                    <img src="images/buffet-spread-01.jpg" alt="Buffet spread" class="w-full h-full object-cover">
+                </div>
+                <div class="showcase-slide">
+                    <img src="images/gallery-hero-02.jpg" alt="Chef plating" class="w-full h-full object-cover">
+                </div>
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/50"></div>
+            <div class="relative z-10 h-full flex items-center justify-between px-6">
+                <button class="showcase-prev text-white p-3" aria-label="Previous showcase">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                    </svg>
+                </button>
+                <div class="text-center text-white max-w-xl mx-auto space-y-2">
+                    <p class="text-xs smallcaps text-primary-light">Showcase</p>
+                    <h2 class="text-3xl md:text-4xl font-semibold">Scenes from our kitchen and tables</h2>
+                </div>
+                <button class="showcase-next text-white p-3" aria-label="Next showcase">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                </button>
             </div>
         </section>
 
@@ -437,37 +500,37 @@
 
         document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-        // Hero slider
-        const heroSlides = Array.from(document.querySelectorAll('.hero-slide'));
-        const prevBtn = document.querySelector('.hero-prev');
-        const nextBtn = document.querySelector('.hero-next');
-        let currentSlide = 0;
-        let timer;
+        // Showcase slider
+        const showcaseSlides = Array.from(document.querySelectorAll('.showcase-slide'));
+        const showcasePrev = document.querySelector('.showcase-prev');
+        const showcaseNext = document.querySelector('.showcase-next');
+        let showcaseCurrent = 0;
+        let showcaseTimer;
 
-        function setSlide(idx) {
-            currentSlide = (idx + heroSlides.length) % heroSlides.length;
-            heroSlides.forEach((slide, i) => {
-                slide.classList.toggle('active', i === currentSlide);
+        function setShowcase(idx) {
+            showcaseCurrent = (idx + showcaseSlides.length) % showcaseSlides.length;
+            showcaseSlides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === showcaseCurrent);
             });
         }
 
-        function startAuto() {
-            clearInterval(timer);
-            timer = setInterval(() => setSlide(currentSlide + 1), 5000);
+        function startShowcaseAuto() {
+            clearInterval(showcaseTimer);
+            showcaseTimer = setInterval(() => setShowcase(showcaseCurrent + 1), 5000);
         }
 
-        prevBtn.addEventListener('click', () => {
-            setSlide(currentSlide - 1);
-            startAuto();
+        showcasePrev.addEventListener('click', () => {
+            setShowcase(showcaseCurrent - 1);
+            startShowcaseAuto();
         });
 
-        nextBtn.addEventListener('click', () => {
-            setSlide(currentSlide + 1);
-            startAuto();
+        showcaseNext.addEventListener('click', () => {
+            setShowcase(showcaseCurrent + 1);
+            startShowcaseAuto();
         });
 
-        setSlide(0);
-        startAuto();
+        setShowcase(0);
+        startShowcaseAuto();
     </script>
 </body>
 
