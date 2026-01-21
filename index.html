@@ -211,86 +211,37 @@
     </header>
 
     <main id="top">
-        <!-- Hero Slider -->
-        <section class="relative min-h-screen pt-20 text-white overflow-hidden">
-            <!-- Slides -->
-            <div class="absolute inset-0">
-                <div class="hero-slide active">
-                    <img src="images/cuisine-showcase-01.jpg" alt="Catering team plating dishes" class="w-full h-full object-cover object-[50%_30%]">
-                </div>
-                <div class="hero-slide">
-                    <img src="images/event-highlights-03.jpg" alt="Guests enjoying plated meal" class="w-full h-full object-cover object-[50%_40%]">
-                </div>
-                <div class="hero-slide">
-                    <img src="images/corporate-event-01.jpg" alt="Outdoor catering setup" class="w-full h-full object-cover object-center">
-                </div>
-                <div class="hero-slide">
-                    <img src="images/cuisine-dish-03.jpg" alt="Large buffet spread" class="w-full h-full object-cover object-center">
-                </div>
-                <div class="hero-slide">
-                    <img src="images/cuisine-showcase-02.jpg" alt="Buffet spread closeup" class="w-full h-full object-cover object-center">
-                </div>
-                <div class="hero-slide">
-                    <img src="images/cuisine-showcase-03.jpg" alt="Elegant table setting" class="w-full h-full object-cover object-center">
-                </div>
-                <div class="hero-slide">
-                    <img src="images/hero.jpg" alt="Service team at event" class="w-full h-full object-cover object-[50%_35%]">
-                </div>
-                <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60"></div>
-            </div>
-
-            <div class="relative z-10 h-full flex items-end pb-4 md:pb-6">
-                <div class="container mx-auto px-4 max-w-5xl">
-                    <div class="max-w-2xl space-y-6 md:mt-60">
-                        <p class="text-xs smallcaps text-primary-light">Foods</p>
-                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight"><span class="text-primary font-black text-5xl md:text-6xl lg:text-7xl">KOMÈ</span> brings the kitchen to you</h1>
-                        <p class="text-lg text-white/85">A chef-led food studio from Ngara crafting abundant, intentional menus—seasonal spreads, graceful service, and calm execution for intimate tastings or 500-guest galas.</p>
-                        <div class="flex flex-col sm:flex-row gap-4">
-                            <a class="arrow-link hero-link" href="#contact">
-                                <span>Plan your event</span>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33 10">
-                                    <path fill="#ffffff"
-                                        d="m32.265 5.265-4.5 4.5a.375.375 0 0 1-.53-.53l3.86-3.86H1a.375.375 0 0 1 0-.75h30.094L27.235.765a.375.375 0 0 1 .53-.53l4.5 4.5a.375.375 0 0 1 0 .53" />
-                                </svg>
-                            </a>
-                            <a class="arrow-link hero-link" href="#paths">
-                                <span>See services</span>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33 10">
-                                    <path fill="#ffffff"
-                                        d="m32.265 5.265-4.5 4.5a.375.375 0 0 1-.53-.53l3.86-3.86H1a.375.375 0 0 1 0-.75h30.094L27.235.765a.375.375 0 0 1 .53-.53l4.5 4.5a.375.375 0 0 1 0 .53" />
-                                </svg>
-                            </a>
-                        </div>
+                <!-- Hero -->
+        <section class="bg-white pt-28 pb-16 min-h-screen flex items-center">
+            <div class="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6 reveal">
+                    <p class="text-xs smallcaps text-primary-dark">Foods</p>
+                    <h1 class="text-4xl md:text-5xl font-semibold leading-tight text-primary">KOMÈ</h1>
+                    <p class="text-lg text-gray-700">A chef-led food studio from Ngara crafting abundant, intentional menus—seasonal spreads, graceful service, and calm execution for intimate tastings or 500-guest galas.</p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a class="arrow-link" href="#contact">
+                            <span>Plan your event</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33 10">
+                                <path fill="#B14C4C"
+                                    d="m32.265 5.265-4.5 4.5a.375.375 0 0 1-.53-.53l3.86-3.86H1a.375.375 0 0 1 0-.75h30.094L27.235.765a.375.375 0 0 1 .53-.53l4.5 4.5a.375.375 0 0 1 0 .53" />
+                            </svg>
+                        </a>
+                        <a class="arrow-link" href="#faq">
+                            <span>View FAQs</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33 10">
+                                <path fill="#B14C4C"
+                                    d="m32.265 5.265-4.5 4.5a.375.375 0 0 1-.53-.53l3.86-3.86H1a.375.375 0 0 1 0-.75h30.094L27.235.765a.375.375 0 0 1 .53-.53l4.5 4.5a.375.375 0 0 1 0 .53" />
+                            </svg>
+                        </a>
                     </div>
                 </div>
-            </div>
-
-            <!-- Controls -->
-            <button class="hero-prev absolute left-6 top-1/2 -translate-y-1/2 z-10 p-3 text-white" aria-label="Previous slide">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-                </svg>
-            </button>
-            <button class="hero-next absolute right-6 top-1/2 -translate-y-1/2 z-10 p-3 text-white" aria-label="Next slide">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                </svg>
-            </button>
-        </section>
-
-        <!-- Origin story slice -->
-        <section id="story" class="py-20 bg-white">
-            <div class="container mx-auto px-4 max-w-4xl text-center space-y-6">
-                <p class="text-xs smallcaps text-primary-dark">Our Story</p>
-                <h2 class="text-3xl md:text-4xl font-semibold reveal">The Story of KOMÉ</h2>
-                <p class="text-gray-700 text-lg reveal">Born in the heart of a quiet creative block in Ngara, KOMÉ is a culinary studio dedicated to the art of intentional dining. Our identity is defined by a contemporary spirit with a historical reverence.</p>
-                <p class="text-gray-700 text-lg reveal">We believe in intellectual honesty—meaning every ingredient has a purpose and every technique is earned. We take the "long way" because we believe the best flavors cannot be rushed. Whether it is our hand-strained yoghurt curds, our slow-simmered garlic-confit, or our heritage cuts of lamb, we honor traditional, time-intensive techniques to create a menu that is both rooted in history and reimagined for the contemporary table.</p>
-                <p class="text-gray-700 text-lg reveal">At KOMÉ, we don't just prepare food; we craft it.</p>
-                <div class="overflow-hidden shadow-lg bg-white max-w-3xl mx-auto reveal">
-                    <img src="images/catering-display-01.jpg" alt="KOMÈ team preparing catering spread" class="w-full h-[360px] object-cover">
+                <div class="overflow-hidden card-shadow reveal">
+                    <img src="images/gallery-hero-01.jpg" alt="Abundant KOMÈ catering spread"
+                        class="w-full h-[440px] object-cover">
                 </div>
             </div>
         </section>
+
 
         <!-- Services grid -->
         <section id="paths" class="py-16 bg-canvas">
